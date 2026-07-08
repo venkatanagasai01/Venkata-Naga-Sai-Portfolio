@@ -49,7 +49,7 @@ export default function Chapter3Synapses() {
       <div className="relative w-full h-[75vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         
         {/* Absolute Positioning for the Canvas */}
-        <div className="absolute inset-0 z-0" ref={ref}>
+        <div className="absolute inset-0 z-0 pointer-events-none md:pointer-events-auto" ref={ref}>
           <Canvas camera={{ position: [0, 0, 12], fov: 45 }} dpr={[1, 1.5]} gl={{ alpha: true, antialias: true }}>
             <NeuralConstellation />
           </Canvas>
