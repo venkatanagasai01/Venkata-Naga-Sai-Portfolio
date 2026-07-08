@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
   const [isPointer, setIsPointer] = useState(false);
 
   useEffect(() => {

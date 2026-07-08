@@ -9,7 +9,7 @@ function ParticleField() {
   const pointsRef = useRef<THREE.Points>(null);
 
   // Generate 500 subtle particles
-  const [[positions, scales]] = useState(() => {
+  const [[positions]] = useState(() => {
     const pos = new Float32Array(500 * 3);
     const scl = new Float32Array(500);
     for (let i = 0; i < 500; i++) {

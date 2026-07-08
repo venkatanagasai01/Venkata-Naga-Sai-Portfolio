@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import NeuralConstellation from "@/components/canvas/NeuralConstellation";
 import { BrainCircuit, Code2, Layout, Server, Database, Bot, Wrench } from "lucide-react";
@@ -41,7 +41,6 @@ const SKILL_CATEGORIES = [
 
 export default function Chapter3Synapses() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "200px" });
   
   return (
     <section className="relative w-full min-h-screen bg-[#030303] border-t border-white/5 flex flex-col" id="expertise">

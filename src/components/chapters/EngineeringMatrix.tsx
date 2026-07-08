@@ -70,7 +70,7 @@ export default function EngineeringMatrix() {
                   )}
 
                   {/* Nodes */}
-                  {pipeline.nodes.map((node, nIndex) => (
+                  {pipeline.nodes.map((node) => (
                     <div 
                       key={node} 
                       className={`relative z-10 px-4 py-2 bg-[#050505] border transition-all duration-300 rounded ${isDimmed ? 'border-white/5 text-white/50' : isHovered ? 'border-[#D4AF37] text-white shadow-[0_0_20px_rgba(212,175,55,0.2)] scale-110' : 'border-white/20 text-white/90'}`}

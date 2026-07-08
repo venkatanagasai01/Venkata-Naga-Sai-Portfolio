@@ -17,7 +17,7 @@ export default function ScrambleText({ text, className = "" }: { text: string; c
     const maxIterations = text.length;
     
     const interval = setInterval(() => {
-      setDisplayText((prev) => {
+      setDisplayText(() => {
         return text
           .split("")
           .map((letter, index) => {

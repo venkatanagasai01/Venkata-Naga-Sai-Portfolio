@@ -1,7 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable react-hooks/purity */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+ 
+ 
+ 
+ 
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
@@ -71,7 +71,7 @@ function GlassPanel({ title, desc, id }: { title: string, desc: string, id: stri
 }
 
 export default function EngineeringPhilosophy() {
-  // eslint-disable-next-line
+   
   const [particles, setParticles] = useState<Array<{left: string, top: string, animationDuration: string, animationDelay: string}>>([]);
 
   useEffect(() => {

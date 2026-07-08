@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ProjectData } from "@/data/projects";
 import Link from "next/link";
-import { ArrowLeft, Code, ExternalLink, Activity, BookOpen, AlertCircle, Server, TrendingUp, Network } from "lucide-react";
+import { ArrowLeft, Code, Activity, BookOpen, AlertCircle, Server, TrendingUp, Network } from "lucide-react";
 import { useEffect } from "react";
 import Image from "next/image";
 
