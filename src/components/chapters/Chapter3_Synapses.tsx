@@ -46,7 +46,7 @@ export default function Chapter3Synapses() {
     <section className="relative w-full min-h-screen bg-[#030303] border-t border-white/5 flex flex-col" id="expertise">
       
       {/* Top Half: Interactive Visualization */}
-      <div className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[75vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         
         {/* Absolute Positioning for the Canvas */}
         <div className="absolute inset-0 z-0" ref={ref}>
@@ -56,19 +56,19 @@ export default function Chapter3Synapses() {
         </div>
 
         {/* Floating HUD over the WebGL */}
-        <div className="absolute inset-0 z-10 pointer-events-none p-4 md:p-6 lg:p-12 flex flex-col justify-between">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:gap-8">
+        <div className="absolute inset-0 z-10 pointer-events-none p-6 lg:p-12 flex flex-col justify-between">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="flex flex-col gap-4 pointer-events-auto"
+              className="flex flex-col gap-4 pointer-events-none drop-shadow-lg"
             >
               <span className="text-[#D4AF37] font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
                 <BrainCircuit size={14} /> Cognitive Architecture
               </span>
-              <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">
+              <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none drop-shadow-xl">
                 Technical Mastery
               </h2>
             </motion.div>
@@ -78,17 +78,17 @@ export default function Chapter3Synapses() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-left md:text-right flex flex-col gap-2 pl-4 md:pl-6 max-w-sm pointer-events-auto bg-black/40 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-4 md:p-0 rounded-xl border border-white/5 md:border-transparent"
+              className="text-left md:text-right flex flex-col gap-2 max-w-sm pointer-events-none drop-shadow-lg"
             >
-              <span className="text-white/70 text-[10px] uppercase tracking-[0.3em] font-mono">System Instructions</span>
-              <p className="text-white font-sans font-light text-sm leading-relaxed mt-2">
+              <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-mono">System Instructions</span>
+              <p className="text-white/90 font-sans font-light text-sm leading-relaxed mt-2">
                 Interact with the neural clusters to access deep architectural insights. 
                 The constellation represents the interconnected intelligence of the operating system.
               </p>
             </motion.div>
           </div>
           
-          <div className="w-full border-t border-white/10 pt-4 md:pt-6 flex flex-col md:flex-row justify-between items-start md:items-center md:gap-0 gap-4 text-white/60 text-[10px] uppercase font-mono tracking-widest bg-black/40 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-4 md:p-0 rounded-xl md:rounded-none border border-white/5 md:border-0">
+          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0 text-white/60 text-[10px] uppercase font-mono tracking-widest pointer-events-none drop-shadow-lg">
             <div className="flex flex-wrap items-center gap-2 md:gap-4">
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> Nodes Active
