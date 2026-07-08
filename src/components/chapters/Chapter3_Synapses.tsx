@@ -63,12 +63,12 @@ export default function Chapter3Synapses() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="flex flex-col gap-4 pointer-events-none drop-shadow-lg"
+              className="flex flex-col gap-4 pointer-events-none md:pointer-events-auto drop-shadow-lg md:drop-shadow-none"
             >
               <span className="text-[#D4AF37] font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
                 <BrainCircuit size={14} /> Cognitive Architecture
               </span>
-              <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none drop-shadow-xl">
+              <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none drop-shadow-xl md:drop-shadow-none">
                 Technical Mastery
               </h2>
             </motion.div>
@@ -78,7 +78,7 @@ export default function Chapter3Synapses() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-left md:text-right flex flex-col gap-2 max-w-sm pointer-events-none drop-shadow-lg"
+              className="text-left md:text-right flex flex-col gap-2 pl-0 md:pl-6 max-w-sm pointer-events-none md:pointer-events-auto drop-shadow-lg md:drop-shadow-none"
             >
               <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-mono">System Instructions</span>
               <p className="text-white/90 font-sans font-light text-sm leading-relaxed mt-2">
@@ -88,7 +88,7 @@ export default function Chapter3Synapses() {
             </motion.div>
           </div>
           
-          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0 text-white/60 text-[10px] uppercase font-mono tracking-widest pointer-events-none drop-shadow-lg">
+          <div className="w-full md:border-t md:border-white/10 pt-4 md:pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0 text-white/60 text-[10px] uppercase font-mono tracking-widest pointer-events-none md:pointer-events-auto drop-shadow-lg md:drop-shadow-none">
             <div className="flex flex-wrap items-center gap-2 md:gap-4">
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> Nodes Active
