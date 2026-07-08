@@ -104,7 +104,7 @@ export default function Chapter6Handshake() {
               </div>
               <div className="flex flex-col items-start gap-1">
                 <span className="text-[#D4AF37] font-mono text-[10px] uppercase tracking-widest">Document</span>
-                <span className="text-[#D4AF37] font-sans text-sm md:text-base">Download Resume</span>
+                <span className="text-[#D4AF37] font-sans text-sm md:text-base">View Resume</span>
               </div>
             </div>
             <TerminalSquare size={16} className="text-[#D4AF37]/80 group-hover:text-[#D4AF37] transition-colors hidden md:block" />
