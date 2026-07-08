@@ -94,7 +94,7 @@ export default function OSBootSequence() {
                 key={idx}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="text-[#D4AF37] font-mono text-xs md:text-sm uppercase tracking-widest leading-relaxed drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
+                className="text-accent font-mono text-xs md:text-sm uppercase tracking-widest leading-relaxed drop-shadow-[0_0_8px_rgba(var(--color-accent),0.4)]"
               >
                 &gt; {msg}
               </motion.div>
@@ -104,7 +104,7 @@ export default function OSBootSequence() {
             <motion.div
               animate={{ opacity: [1, 0] }}
               transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
-              className="w-3 h-5 bg-[#D4AF37] mt-2 shadow-[0_0_8px_#D4AF37]"
+              className="w-3 h-5 bg-accent mt-2 shadow-[0_0_8px_#D4AF37]"
             />
           </div>
           

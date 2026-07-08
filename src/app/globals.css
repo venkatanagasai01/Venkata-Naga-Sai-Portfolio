@@ -37,12 +37,12 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: var(--accent);
 }
 
 /* Base selection color */
 ::selection {
-  background: rgba(212, 175, 55, 0.3);
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
   color: #fff;
 }
 

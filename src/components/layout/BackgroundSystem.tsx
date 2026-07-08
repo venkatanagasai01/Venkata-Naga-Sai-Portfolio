@@ -68,7 +68,7 @@ export default function BackgroundSystem() {
 
       {/* Layer 3: Moving Gradient / Lighting */}
       <div className="absolute inset-0 z-20 mix-blend-screen opacity-30">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#D4AF37] blur-[150px] animate-[pulse_10s_ease-in-out_infinite]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-accent blur-[150px] animate-[pulse_10s_ease-in-out_infinite]" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-[#ffffff] blur-[120px] animate-[pulse_8s_ease-in-out_infinite_reverse]" />
       </div>
 

@@ -65,7 +65,7 @@ export default function Chapter3Synapses() {
               transition={{ duration: 0.8 }}
               className="flex flex-col gap-4 pointer-events-none md:pointer-events-auto drop-shadow-lg md:drop-shadow-none"
             >
-              <span className="text-[#D4AF37] font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
+              <span className="text-accent font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
                 <BrainCircuit size={14} /> Cognitive Architecture
               </span>
               <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none drop-shadow-xl md:drop-shadow-none">
@@ -80,7 +80,7 @@ export default function Chapter3Synapses() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-left md:text-right flex flex-col gap-2 pl-0 md:pl-6 max-w-sm pointer-events-none md:pointer-events-auto drop-shadow-lg md:drop-shadow-none"
             >
-              <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-mono">System Instructions</span>
+              <span className="text-accent text-[10px] uppercase tracking-[0.3em] font-mono">System Instructions</span>
               <p className="text-white/90 font-sans font-light text-sm leading-relaxed mt-2">
                 Interact with the neural clusters to access deep architectural insights. 
                 The constellation represents the interconnected intelligence of the operating system.
@@ -112,10 +112,10 @@ export default function Chapter3Synapses() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="group flex flex-col gap-6 p-8 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-[#D4AF37]/40 transition-all duration-500 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                className="group flex flex-col gap-6 p-8 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-accent/40 transition-all duration-500 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
               >
                 <div className="flex items-center gap-4 border-b border-white/10 pb-4">
-                  <div className="p-3 bg-white/10 rounded-xl group-hover:text-[#D4AF37] group-hover:bg-[#D4AF37]/10 transition-colors text-white/90">
+                  <div className="p-3 bg-white/10 rounded-xl group-hover:text-accent group-hover:bg-accent/10 transition-colors text-white/90">
                     <category.icon size={20} />
                   </div>
                   <h3 className="text-white font-serif text-2xl tracking-wide">{category.title}</h3>
@@ -125,7 +125,7 @@ export default function Chapter3Synapses() {
                   {category.skills.map((skill) => (
                     <span 
                       key={skill} 
-                      className="px-4 py-2 bg-white/5 border border-white/20 rounded-lg text-sm text-white/90 font-mono tracking-wide hover:border-[#D4AF37]/60 hover:text-white hover:bg-[#D4AF37]/10 transition-all cursor-default shadow-sm"
+                      className="px-4 py-2 bg-white/5 border border-white/20 rounded-lg text-sm text-white/90 font-mono tracking-wide hover:border-accent/60 hover:text-white hover:bg-accent/10 transition-all cursor-default shadow-sm"
                     >
                       {skill}
                     </span>

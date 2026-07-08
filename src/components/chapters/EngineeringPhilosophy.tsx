@@ -51,13 +51,13 @@ function GlassPanel({ title, desc, id }: { title: string, desc: string, id: stri
       className="relative w-full h-[300px] rounded-2xl cursor-crosshair perspective-1000 group"
     >
       <div 
-        className="absolute inset-0 bg-white/[0.01] border border-white/10 rounded-2xl p-8 flex flex-col justify-between backdrop-blur-md group-hover:border-[#D4AF37]/50 group-hover:bg-white/[0.03] transition-colors duration-500"
+        className="absolute inset-0 bg-white/[0.01] border border-white/10 rounded-2xl p-8 flex flex-col justify-between backdrop-blur-md group-hover:border-accent/50 group-hover:bg-white/[0.03] transition-colors duration-500"
         style={{ transform: "translateZ(20px)" }}
       >
-        <span className="text-[#D4AF37] font-mono text-[10px] uppercase tracking-widest">{id}</span>
+        <span className="text-accent font-mono text-[10px] uppercase tracking-widest">{id}</span>
         
         <div>
-          <h3 className="text-2xl font-serif text-white mb-4 group-hover:text-[#D4AF37] transition-colors">{title}</h3>
+          <h3 className="text-2xl font-serif text-white mb-4 group-hover:text-accent transition-colors">{title}</h3>
           <p className="text-white/90 font-sans font-light text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
             {desc}
           </p>
@@ -65,7 +65,7 @@ function GlassPanel({ title, desc, id }: { title: string, desc: string, id: stri
       </div>
       
       {/* Glow Effect */}
-      <div className="absolute inset-0 bg-[#D4AF37]/0 group-hover:bg-[#D4AF37]/5 rounded-2xl blur-xl transition-colors duration-500 pointer-events-none" style={{ transform: "translateZ(-10px)" }} />
+      <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 rounded-2xl blur-xl transition-colors duration-500 pointer-events-none" style={{ transform: "translateZ(-10px)" }} />
     </motion.div>
   );
 }
@@ -94,7 +94,7 @@ export default function EngineeringPhilosophy() {
         {particles.map((style, i) => (
           <div 
             key={i}
-            className="absolute w-1 h-1 bg-[#D4AF37]/20 rounded-full animate-float"
+            className="absolute w-1 h-1 bg-accent/20 rounded-full animate-float"
             style={style}
           />
         ))}
@@ -102,7 +102,7 @@ export default function EngineeringPhilosophy() {
 
       <div className="w-full max-w-[1400px] mx-auto flex flex-col gap-16 relative z-10">
         <div className="flex flex-col items-center text-center gap-4 border-b border-white/10 pb-8">
-          <span className="text-[#D4AF37] font-mono text-[10px] uppercase tracking-[0.4em]">Core Axioms</span>
+          <span className="text-accent font-mono text-[10px] uppercase tracking-[0.4em]">Core Axioms</span>
           <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">Engineering Philosophy</h2>
         </div>
 

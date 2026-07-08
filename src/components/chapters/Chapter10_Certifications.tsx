@@ -21,7 +21,7 @@ export default function Chapter10Certifications() {
         
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-4">
-          <span className="text-[#D4AF37] font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
+          <span className="text-accent font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
             <Shield size={14} /> Security Clearance
           </span>
           <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">
@@ -38,15 +38,15 @@ export default function Chapter10Certifications() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative p-8 bg-black/40 border border-white/10 rounded-2xl overflow-hidden hover:border-[#D4AF37]/50 transition-colors backdrop-blur-sm"
+              className="group relative p-8 bg-black/40 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/50 transition-colors backdrop-blur-sm"
             >
               {/* Highlight sweep */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D4AF37]/5 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/5 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
               
               <div className="relative z-10 flex flex-col gap-6">
                 
                 <div className="flex justify-between items-start">
-                  <div className="p-3 bg-white/5 rounded-xl text-[#D4AF37]">
+                  <div className="p-3 bg-white/5 rounded-xl text-accent">
                     <Award size={24} />
                   </div>
                   <span className="flex items-center gap-1.5 px-3 py-1 bg-green-500/10 text-green-400 border border-green-500/20 rounded-full font-mono text-[10px] uppercase tracking-widest">
@@ -55,7 +55,7 @@ export default function Chapter10Certifications() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-2xl font-serif text-white group-hover:text-[#D4AF37] transition-colors">{cert.name}</h3>
+                  <h3 className="text-2xl font-serif text-white group-hover:text-accent transition-colors">{cert.name}</h3>
                   <div className="flex items-center gap-4 text-white/80 font-mono text-xs">
                     <span>{cert.issuer}</span>
                     <span>•</span>

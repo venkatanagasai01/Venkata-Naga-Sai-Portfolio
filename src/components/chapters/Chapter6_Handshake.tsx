@@ -35,9 +35,9 @@ export default function Chapter6Handshake() {
         {/* Links Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-8">
           
-          <a href="mailto:venkatanagasai01@gmail.com" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-[#D4AF37]/50 transition-all duration-300">
+          <a href="mailto:venkatanagasai01@gmail.com" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-accent/50 transition-all duration-300">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-white/5 rounded-xl group-hover:bg-[#D4AF37]/20 group-hover:text-[#D4AF37] transition-colors text-white">
+              <div className="p-3 bg-white/5 rounded-xl group-hover:bg-accent/20 group-hover:text-accent transition-colors text-white">
                 <Mail size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
@@ -47,9 +47,9 @@ export default function Chapter6Handshake() {
             </div>
           </a>
 
-          <a href="tel:+918919025292" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-[#D4AF37]/50 transition-all duration-300">
+          <a href="tel:+918919025292" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-accent/50 transition-all duration-300">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-white/5 rounded-xl group-hover:bg-[#D4AF37]/20 group-hover:text-[#D4AF37] transition-colors text-white">
+              <div className="p-3 bg-white/5 rounded-xl group-hover:bg-accent/20 group-hover:text-accent transition-colors text-white">
                 <Phone size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
@@ -71,9 +71,9 @@ export default function Chapter6Handshake() {
             </div>
           </div>
 
-          <a href="https://www.linkedin.com/in/venkata-naga-sai-adapala-91a8732a6/" target="_blank" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-[#D4AF37]/50 transition-all duration-300">
+          <a href="https://www.linkedin.com/in/venkata-naga-sai-adapala-91a8732a6/" target="_blank" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-accent/50 transition-all duration-300">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-white/5 rounded-xl group-hover:bg-[#D4AF37]/20 group-hover:text-[#D4AF37] transition-colors text-white">
+              <div className="p-3 bg-white/5 rounded-xl group-hover:bg-accent/20 group-hover:text-accent transition-colors text-white">
                 <User size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
@@ -81,12 +81,12 @@ export default function Chapter6Handshake() {
                 <span className="text-white font-sans text-sm md:text-base">LinkedIn</span>
               </div>
             </div>
-            <TerminalSquare size={16} className="text-white/50 group-hover:text-[#D4AF37] transition-colors hidden md:block" />
+            <TerminalSquare size={16} className="text-white/50 group-hover:text-accent transition-colors hidden md:block" />
           </a>
 
-          <a href="https://github.com/venkatanagasai01" target="_blank" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-[#D4AF37]/50 transition-all duration-300">
+          <a href="https://github.com/venkatanagasai01" target="_blank" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-accent/50 transition-all duration-300">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-white/5 rounded-xl group-hover:bg-[#D4AF37]/20 group-hover:text-[#D4AF37] transition-colors text-white">
+              <div className="p-3 bg-white/5 rounded-xl group-hover:bg-accent/20 group-hover:text-accent transition-colors text-white">
                 <Code size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
@@ -94,20 +94,20 @@ export default function Chapter6Handshake() {
                 <span className="text-white font-sans text-sm md:text-base">GitHub</span>
               </div>
             </div>
-            <TerminalSquare size={16} className="text-white/50 group-hover:text-[#D4AF37] transition-colors hidden md:block" />
+            <TerminalSquare size={16} className="text-white/50 group-hover:text-accent transition-colors hidden md:block" />
           </a>
 
-          <a href="/resume.pdf" target="_blank" className="group flex items-center justify-between p-6 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-2xl hover:bg-[#D4AF37]/20 hover:border-[#D4AF37] transition-all duration-300 lg:col-span-1 md:col-span-2">
+          <a href="/resume.pdf" target="_blank" className="group flex items-center justify-between p-6 bg-accent/10 border border-accent/30 rounded-2xl hover:bg-accent/20 hover:border-accent transition-all duration-300 lg:col-span-1 md:col-span-2">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-[#D4AF37]/20 rounded-xl text-[#D4AF37]">
+              <div className="p-3 bg-accent/20 rounded-xl text-accent">
                 <FileDown size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
-                <span className="text-[#D4AF37] font-mono text-[10px] uppercase tracking-widest">Document</span>
-                <span className="text-[#D4AF37] font-sans text-sm md:text-base">View Resume</span>
+                <span className="text-accent font-mono text-[10px] uppercase tracking-widest">Document</span>
+                <span className="text-accent font-sans text-sm md:text-base">View Resume</span>
               </div>
             </div>
-            <TerminalSquare size={16} className="text-[#D4AF37]/80 group-hover:text-[#D4AF37] transition-colors hidden md:block" />
+            <TerminalSquare size={16} className="text-accent/80 group-hover:text-accent transition-colors hidden md:block" />
           </a>
 
         </div>

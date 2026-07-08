@@ -133,9 +133,9 @@ export default function NeuralConstellation() {
             {/* Expanded Holographic Panel (When Clicked) */}
             {isActive && (
               <Html distanceFactor={8} position={[0.4, 0, 0]} zIndexRange={[100, 0]}>
-                <div className="w-[300px] bg-black/80 border border-[#D4AF37]/40 backdrop-blur-xl p-6 rounded-lg text-white shadow-[0_0_30px_rgba(212,175,55,0.15)] animate-in fade-in zoom-in duration-300">
+                <div className="w-[300px] bg-black/80 border border-accent/40 backdrop-blur-xl p-6 rounded-lg text-white shadow-[0_0_30px_rgba(var(--color-accent),0.15)] animate-in fade-in zoom-in duration-300">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="font-serif text-2xl text-[#D4AF37]">{node.category}</h3>
+                    <h3 className="font-serif text-2xl text-accent">{node.category}</h3>
                     <button 
                       onClick={(e) => { e.stopPropagation(); setActiveNode(null); }}
                       className="text-white/70 hover:text-white transition-colors"
@@ -150,12 +150,12 @@ export default function NeuralConstellation() {
                   
                   <div className="flex flex-col gap-4">
                     <div>
-                      <span className="text-[#D4AF37] font-mono text-[10px] uppercase tracking-widest block mb-2">Metrics</span>
+                      <span className="text-accent font-mono text-[10px] uppercase tracking-widest block mb-2">Metrics</span>
                       <span className="text-white font-mono text-xs">{node.metrics}</span>
                     </div>
                     
                     <div>
-                      <span className="text-[#D4AF37] font-mono text-[10px] uppercase tracking-widest block mb-2">Stack Vectors</span>
+                      <span className="text-accent font-mono text-[10px] uppercase tracking-widest block mb-2">Stack Vectors</span>
                       <div className="flex flex-wrap gap-2">
                         {node.techs.map(t => (
                           <span key={t} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[10px] uppercase tracking-widest text-white">

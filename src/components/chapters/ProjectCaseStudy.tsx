@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const SectionHeading = ({ title, subtitle }: { title: string, subtitle?: string }) => (
   <div className="flex flex-col gap-2 mb-12">
-    {subtitle && <span className="text-[#D4AF37] font-mono text-[10px] uppercase tracking-[0.3em]">{subtitle}</span>}
+    {subtitle && <span className="text-accent font-mono text-[10px] uppercase tracking-[0.3em]">{subtitle}</span>}
     <h2 className="text-3xl md:text-5xl font-serif text-white tracking-tight">{title}</h2>
   </div>
 );
@@ -65,7 +65,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
           </h1>
           
           <div className="flex flex-col items-center gap-8 max-w-4xl">
-            <span className="text-[#D4AF37] font-mono text-xs uppercase tracking-[0.3em]">{project.tagline}</span>
+            <span className="text-accent font-mono text-xs uppercase tracking-[0.3em]">{project.tagline}</span>
             <p className="text-white font-sans text-xl md:text-2xl font-light leading-relaxed">
               {project.overview}
             </p>
@@ -75,7 +75,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-white/60">
           <div className="w-[1px] h-16 bg-white/10 relative overflow-hidden">
             <motion.div 
-              className="w-full h-1/2 bg-[#D4AF37]"
+              className="w-full h-1/2 bg-accent"
               animate={{ y: ["-100%", "200%"] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
             />
@@ -119,7 +119,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
               transition={{ delay: 0.2 }}
             >
               <SectionHeading title="The Solution" subtitle="02 // Approach" />
-              <p className="text-white font-sans text-lg font-light leading-relaxed border-l border-[#D4AF37]/30 pl-6">
+              <p className="text-white font-sans text-lg font-light leading-relaxed border-l border-accent/30 pl-6">
                 {project.solution}
               </p>
             </motion.section>
@@ -137,7 +137,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {project.features.map((feature, i) => (
                 <div key={i} className="flex items-start gap-4 p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-                  <Activity className="text-[#D4AF37] shrink-0 mt-1" size={20} />
+                  <Activity className="text-accent shrink-0 mt-1" size={20} />
                   <span className="text-white font-light leading-relaxed">{feature}</span>
                 </div>
               ))}
@@ -160,7 +160,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
               
               {project.architectureDiagramDesc && !project.architectureDiagramDesc.includes("[TODO") && (
                 <div className="mt-4 p-6 bg-white/[0.02] border border-white/10 rounded-xl flex items-center justify-center text-center">
-                  <span className="text-[#D4AF37] font-mono text-sm tracking-widest">{project.architectureDiagramDesc}</span>
+                  <span className="text-accent font-mono text-sm tracking-widest">{project.architectureDiagramDesc}</span>
                 </div>
               )}
 
@@ -176,8 +176,8 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
 
               {project.aiPipeline && !project.aiPipeline.includes("[TODO") && (
                 <div className="mt-4 p-8 bg-[#050505] border border-white/10 rounded-2xl relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-[#D4AF37]" />
-                  <span className="text-[#D4AF37] font-mono text-xs uppercase tracking-widest flex items-center gap-2 mb-4">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
+                  <span className="text-accent font-mono text-xs uppercase tracking-widest flex items-center gap-2 mb-4">
                     <Network size={14} /> AI Pipeline
                   </span>
                   <p className="text-white font-light">{project.aiPipeline}</p>
@@ -189,7 +189,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
               <h4 className="text-white font-serif text-2xl mb-8">Technology Stack</h4>
               <div className="flex flex-wrap gap-4">
                 {project.technologies.map((tech, i) => (
-                  <span key={i} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white font-mono tracking-wide hover:border-[#D4AF37]/50 transition-colors">
+                  <span key={i} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white font-mono tracking-wide hover:border-accent/50 transition-colors">
                     {tech}
                   </span>
                 ))}

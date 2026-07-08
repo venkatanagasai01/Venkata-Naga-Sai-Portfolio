@@ -27,12 +27,12 @@ export default function Chapter9Knowledge() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-8 gap-8">
           <div className="flex flex-col gap-4">
-            <span className="text-[#D4AF37] font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#D4AF37] rounded-sm" /> Knowledge Foundation
+            <span className="text-accent font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
+              <span className="w-2 h-2 bg-accent rounded-sm" /> Knowledge Foundation
             </span>
             <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">Classified Index</h2>
           </div>
-          <div className="text-left md:text-right flex flex-col gap-2 pl-4 md:pl-6 md:border-l-0 border-l border-[#D4AF37]/30">
+          <div className="text-left md:text-right flex flex-col gap-2 pl-4 md:pl-6 md:border-l-0 border-l border-accent/30">
             <span className="text-white/70 text-[10px] uppercase tracking-[0.3em] font-mono">Clearance</span>
             <span className="text-red-500 text-sm uppercase tracking-widest font-sans flex items-center gap-2">
               Level 4 Granted
@@ -43,7 +43,7 @@ export default function Chapter9Knowledge() {
         {/* Top Secret Document Wrapper */}
         <div className="border border-white/10 bg-[#030303] rounded-sm p-8 md:p-12 relative overflow-hidden group">
           
-          <div className="absolute top-4 right-4 border border-white/20 text-white/50 px-2 py-1 font-mono text-[8px] uppercase tracking-widest -rotate-12 pointer-events-none group-hover:border-red-500/50 group-hover:text-red-500/50 transition-colors">
+          <div className="absolute top-4 right-4 md:top-6 md:right-8 border-[1.5px] border-white/20 text-white/50 px-4 py-1.5 font-mono text-[10px] md:text-xs uppercase tracking-widest -rotate-12 pointer-events-none group-hover:border-red-500/50 group-hover:text-red-500/50 transition-colors shadow-xl">
             Confidential
           </div>
 
@@ -57,7 +57,7 @@ export default function Chapter9Knowledge() {
                 <span className="text-white/70 font-mono text-[10px] uppercase tracking-[0.2em]">Facility</span>
                 <span className="text-white text-lg font-sans">{EDUCATION.university}</span>
                 <div className="flex items-center gap-4 mt-1">
-                  <span className="text-[#D4AF37] font-mono text-xs">{EDUCATION.year}</span>
+                  <span className="text-accent font-mono text-xs">{EDUCATION.year}</span>
                   <span className="text-white/60">|</span>
                   <span className="text-green-400 font-mono text-xs uppercase tracking-widest">CGPA: {EDUCATION.cgpa}</span>
                 </div>
@@ -74,10 +74,10 @@ export default function Chapter9Knowledge() {
                     <div 
                       key={i} 
                       onClick={() => setActiveSubject(isActive ? null : i)}
-                      className={`border p-4 cursor-pointer transition-all duration-300 ${isActive ? 'bg-white/[0.05] border-[#D4AF37]/50' : 'bg-transparent border-white/5 hover:border-white/20'}`}
+                      className={`border p-4 cursor-pointer transition-all duration-300 ${isActive ? 'bg-white/[0.05] border-accent/50' : 'bg-transparent border-white/5 hover:border-white/20'}`}
                     >
                       <div className="flex justify-between items-center">
-                        <span className={`font-mono text-sm uppercase tracking-widest ${isActive ? 'text-[#D4AF37]' : 'text-white'}`}>{sub.name}</span>
+                        <span className={`font-mono text-sm uppercase tracking-widest ${isActive ? 'text-accent' : 'text-white'}`}>{sub.name}</span>
                         <span className="text-white/70 text-lg">{isActive ? '−' : '+'}</span>
                       </div>
                       
@@ -96,7 +96,7 @@ export default function Chapter9Knowledge() {
                               </div>
                               <div>
                                 <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest block mb-1">Applied Engineering</span>
-                                <p className="text-white font-light text-sm text-[#D4AF37]">{sub.apps}</p>
+                                <p className="text-white font-light text-sm text-accent">{sub.apps}</p>
                               </div>
                             </div>
                           </motion.div>

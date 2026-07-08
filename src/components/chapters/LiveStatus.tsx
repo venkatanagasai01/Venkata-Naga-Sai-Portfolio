@@ -52,14 +52,14 @@ export default function LiveStatus() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-8 gap-8">
           <div className="flex flex-col gap-4">
-            <span className="text-[#D4AF37] font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse" /> AI & Full Stack Development
+            <span className="text-accent font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
+              <span className="w-2 h-2 bg-accent rounded-full animate-pulse" /> AI & Full Stack Development
             </span>
             <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">Engineering Achievements</h2>
           </div>
           <div className="text-right flex flex-col gap-2 pl-6">
             <span className="text-white/70 text-[10px] uppercase tracking-[0.3em] font-mono">Uptime</span>
-            <span className="text-[#D4AF37] text-sm uppercase tracking-widest font-sans flex items-center gap-2">
+            <span className="text-accent text-sm uppercase tracking-widest font-sans flex items-center gap-2">
               99.99% Nominal
             </span>
           </div>
@@ -74,10 +74,10 @@ export default function LiveStatus() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: i * 0.1 }}
-              className="flex flex-col p-6 bg-white/[0.01] border border-white/5 rounded-2xl relative overflow-hidden group hover:border-[#D4AF37]/30 transition-colors"
+              className="flex flex-col p-6 bg-white/[0.01] border border-white/5 rounded-2xl relative overflow-hidden group hover:border-accent/30 transition-colors"
             >
               {/* Scanline effect */}
-              <div className="absolute inset-0 bg-[linear-gradient(transparent_0%,rgba(212,175,55,0.05)_50%,transparent_100%)] bg-[length:100%_4px] opacity-0 group-hover:opacity-100 group-hover:animate-[scan_2s_linear_infinite] pointer-events-none" />
+              <div className="absolute inset-0 bg-[linear-gradient(transparent_0%,rgba(var(--color-accent),0.05)_50%,transparent_100%)] bg-[length:100%_4px] opacity-0 group-hover:opacity-100 group-hover:animate-[scan_2s_linear_infinite] pointer-events-none" />
               
               <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               
@@ -85,7 +85,7 @@ export default function LiveStatus() {
                 <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest">{stat.label}</span>
                 <div className="flex gap-1">
                   {[...Array(3)].map((_, j) => (
-                    <span key={j} className="w-1 h-3 bg-[#D4AF37]/20 group-hover:bg-[#D4AF37] transition-colors" style={{ transitionDelay: `${j * 100}ms` }} />
+                    <span key={j} className="w-1 h-3 bg-accent/20 group-hover:bg-accent transition-colors" style={{ transitionDelay: `${j * 100}ms` }} />
                   ))}
                 </div>
               </div>

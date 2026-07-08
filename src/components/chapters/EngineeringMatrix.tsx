@@ -24,7 +24,7 @@ export default function EngineeringMatrix() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-8 gap-8">
           <div className="flex flex-col gap-4">
-            <span className="text-[#D4AF37] font-mono text-[10px] md:text-xs uppercase tracking-[0.4em]">System Topography</span>
+            <span className="text-accent font-mono text-[10px] md:text-xs uppercase tracking-[0.4em]">System Topography</span>
             <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">Engineering Matrix</h2>
           </div>
           <div className="text-right flex flex-col gap-2 pl-6">
@@ -50,7 +50,7 @@ export default function EngineeringMatrix() {
                 onMouseLeave={() => setHoveredPipeline(null)}
               >
                 {/* Label */}
-                <div className={`w-48 text-right font-mono text-xs uppercase tracking-widest transition-opacity duration-300 ${isDimmed ? 'text-white/50' : 'text-[#D4AF37]'}`}>
+                <div className={`w-48 text-right font-mono text-xs uppercase tracking-widest transition-opacity duration-300 ${isDimmed ? 'text-white/50' : 'text-accent'}`}>
                   {pipeline.name}
                 </div>
 
@@ -63,7 +63,7 @@ export default function EngineeringMatrix() {
                   {/* Animated Data Packets (Only if hovered or no hover) */}
                   {(!isDimmed) && (
                     <motion.div
-                      className="absolute top-1/2 left-0 w-2 h-2 bg-[#D4AF37] rounded-full -translate-y-1/2 shadow-[0_0_10px_#D4AF37]"
+                      className="absolute top-1/2 left-0 w-2 h-2 bg-accent rounded-full -translate-y-1/2 shadow-[0_0_10px_#D4AF37]"
                       animate={{ left: ["0%", "100%"] }}
                       transition={{ duration: 2 + pIndex * 0.5, repeat: Infinity, ease: "linear" }}
                     />
@@ -73,13 +73,13 @@ export default function EngineeringMatrix() {
                   {pipeline.nodes.map((node) => (
                     <div 
                       key={node} 
-                      className={`relative z-10 px-4 py-2 bg-[#050505] border transition-all duration-300 rounded ${isDimmed ? 'border-white/5 text-white/50' : isHovered ? 'border-[#D4AF37] text-white shadow-[0_0_20px_rgba(212,175,55,0.2)] scale-110' : 'border-white/20 text-white/90'}`}
+                      className={`relative z-10 px-4 py-2 bg-[#050505] border transition-all duration-300 rounded ${isDimmed ? 'border-white/5 text-white/50' : isHovered ? 'border-accent text-white shadow-[0_0_20px_rgba(var(--color-accent),0.2)] scale-110' : 'border-white/20 text-white/90'}`}
                     >
                       <span className="font-sans text-xs tracking-widest">{node}</span>
                       
                       {/* Connection Dots */}
-                      <div className={`absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#050505] border transition-colors ${isDimmed ? 'border-white/5' : isHovered ? 'border-[#D4AF37]' : 'border-white/20'}`} />
-                      <div className={`absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#050505] border transition-colors ${isDimmed ? 'border-white/5' : isHovered ? 'border-[#D4AF37]' : 'border-white/20'}`} />
+                      <div className={`absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#050505] border transition-colors ${isDimmed ? 'border-white/5' : isHovered ? 'border-accent' : 'border-white/20'}`} />
+                      <div className={`absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#050505] border transition-colors ${isDimmed ? 'border-white/5' : isHovered ? 'border-accent' : 'border-white/20'}`} />
                     </div>
                   ))}
 

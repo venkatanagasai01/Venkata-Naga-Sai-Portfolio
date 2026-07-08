@@ -7,22 +7,32 @@ export default function CustomCursor() {
   const [hoverState, setHoverState] = useState<"default" | "hover" | "magnetic">("default");
   const [isVisible, setIsVisible] = useState(false);
   const [magneticTarget, setMagneticTarget] = useState<HTMLElement | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   // Raw mouse coordinates
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
   // Main cursor physics (Fast)
-  const springConfigMain = { damping: 25, stiffness: 400, mass: 0.1 };
+  const springConfigMain = { damping: 20, stiffness: 800, mass: 0.05 };
   const cursorX = useSpring(mouseX, springConfigMain);
   const cursorY = useSpring(mouseY, springConfigMain);
 
   // Trail physics (Slower, creates the trail effect)
-  const springConfigTrail = { damping: 30, stiffness: 200, mass: 0.5 };
+  const springConfigTrail = { damping: 25, stiffness: 400, mass: 0.2 };
   const trailX = useSpring(mouseX, springConfigTrail);
   const trailY = useSpring(mouseY, springConfigTrail);
 
   useEffect(() => {
+    // Check if it's a touch device on mount
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      setIsTouchDevice(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isTouchDevice) return;
+
     const moveCursor = (e: MouseEvent) => {
       if (hoverState === "magnetic" && magneticTarget) {
         const rect = magneticTarget.getBoundingClientRect();
@@ -45,43 +55,41 @@ export default function CustomCursor() {
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      
+      const magnetic = target.closest("[data-cursor='magnetic']") as HTMLElement;
+      if (magnetic) {
+        setHoverState("magnetic");
+        setMagneticTarget(magnetic);
+        return;
+      }
+      
+      const hover = target.closest("[data-cursor='hover']");
+      if (hover) {
+        setHoverState("hover");
+        setMagneticTarget(null);
+        return;
+      }
+      
+      setHoverState("default");
+      setMagneticTarget(null);
+    };
+
     window.addEventListener("mousemove", moveCursor);
+    document.addEventListener("mouseover", handleMouseOver);
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
 
-    const bindElements = () => {
-      // Hover Elements (Photographs, generic interactables)
-      const hoverElements = document.querySelectorAll("[data-cursor='hover']");
-      hoverElements.forEach((el) => {
-        el.addEventListener("mouseenter", () => setHoverState("hover"));
-        el.addEventListener("mouseleave", () => setHoverState("default"));
-      });
-
-      // Magnetic Elements (Buttons/Links)
-      const magneticElements = document.querySelectorAll("[data-cursor='magnetic']");
-      magneticElements.forEach((el) => {
-        el.addEventListener("mouseenter", (e) => {
-          setHoverState("magnetic");
-          setMagneticTarget(e.currentTarget as HTMLElement);
-        });
-        el.addEventListener("mouseleave", () => {
-          setHoverState("default");
-          setMagneticTarget(null);
-        });
-      });
-    };
-
-    bindElements();
-    const observer = new MutationObserver(bindElements);
-    observer.observe(document.body, { childList: true, subtree: true });
-
     return () => {
       window.removeEventListener("mousemove", moveCursor);
+      document.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
-      observer.disconnect();
     };
   }, [hoverState, magneticTarget, mouseX, mouseY]);
+
+  if (isTouchDevice) return null;
 
   // Visual states
   const isHover = hoverState === "hover";
@@ -118,7 +126,7 @@ export default function CustomCursor() {
             height: trailSize,
           }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
-          className="rounded-full bg-[#D4AF37]/30 blur-[8px]"
+          className="rounded-full bg-accent/30 blur-[8px]"
         />
       </motion.div>
 

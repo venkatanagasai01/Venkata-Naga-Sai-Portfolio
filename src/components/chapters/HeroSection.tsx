@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import AICore from "@/components/canvas/AICore";
 import { FileDown, Code, User, Mail } from "lucide-react";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 // Advanced text assembly animation
 const AssembleText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
@@ -89,7 +90,7 @@ export default function HeroSection() {
           transition={{ duration: 1.5, delay: 2.0, ease: "easeOut" }}
           className="mt-6 flex flex-col items-center gap-4 text-center"
         >
-          <h2 className="text-[#D4AF37] font-mono text-sm md:text-base uppercase tracking-[0.3em]">
+          <h2 className="text-accent font-mono text-sm md:text-base uppercase tracking-[0.3em]">
             AI & Full Stack Developer
           </h2>
           <p className="text-white/90 font-sans text-lg md:text-xl font-light max-w-2xl mx-auto">
@@ -105,18 +106,26 @@ export default function HeroSection() {
           transition={{ duration: 1.5, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 flex flex-wrap justify-center gap-4"
         >
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-[#D4AF37]/10 border border-[#D4AF37]/50 rounded-full hover:bg-[#D4AF37]/20 transition-all text-[#D4AF37] font-sans text-xs uppercase tracking-widest">
-            <FileDown size={16} /> View Resume
-          </a>
-          <a href="https://github.com/venkatanagasai01" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-white/[0.05] border border-white/10 rounded-full hover:bg-white/[0.1] hover:border-white/30 transition-all text-white font-sans text-xs uppercase tracking-widest">
-            <Code size={16} /> View GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/venkata-naga-sai-adapala-91a8732a6/" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-white/[0.05] border border-white/10 rounded-full hover:bg-white/[0.1] hover:border-white/30 transition-all text-white font-sans text-xs uppercase tracking-widest">
-            <User size={16} /> View LinkedIn
-          </a>
-          <a href="#contact" className="flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full hover:bg-[#D4AF37] hover:text-white transition-all font-sans text-xs uppercase tracking-widest">
-            <Mail size={16} /> Contact Me
-          </a>
+          <MagneticButton href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <div className="flex items-center gap-2 px-6 py-3 bg-accent/10 border border-accent/50 rounded-full hover:bg-accent/20 transition-all text-accent font-sans text-xs uppercase tracking-widest">
+              <FileDown size={16} /> View Resume
+            </div>
+          </MagneticButton>
+          <MagneticButton href="https://github.com/venkatanagasai01" target="_blank">
+            <div className="flex items-center gap-2 px-6 py-3 bg-white/[0.05] border border-white/10 rounded-full hover:bg-white/[0.1] hover:border-white/30 transition-all text-white font-sans text-xs uppercase tracking-widest">
+              <Code size={16} /> View GitHub
+            </div>
+          </MagneticButton>
+          <MagneticButton href="https://www.linkedin.com/in/venkata-naga-sai-adapala-91a8732a6/" target="_blank">
+            <div className="flex items-center gap-2 px-6 py-3 bg-white/[0.05] border border-white/10 rounded-full hover:bg-white/[0.1] hover:border-white/30 transition-all text-white font-sans text-xs uppercase tracking-widest">
+              <User size={16} /> View LinkedIn
+            </div>
+          </MagneticButton>
+          <MagneticButton href="#contact">
+            <div className="flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full hover:bg-accent hover:text-white transition-all font-sans text-xs uppercase tracking-widest">
+              <Mail size={16} /> Contact Me
+            </div>
+          </MagneticButton>
         </motion.div>
 
         {/* Current Status */}
@@ -150,7 +159,7 @@ export default function HeroSection() {
         <span className="text-[9px] uppercase tracking-[0.5em] font-mono opacity-50">Initiate System Descent</span>
         <div className="w-[1px] h-20 bg-white/5 relative overflow-hidden">
           <motion.div 
-            className="w-full h-1/2 bg-gradient-to-b from-transparent via-[#D4AF37] to-transparent"
+            className="w-full h-1/2 bg-gradient-to-b from-transparent via-accent to-transparent"
             animate={{ y: ["-100%", "200%"] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
           />
