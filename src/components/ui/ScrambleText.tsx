@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "framer-motion";
 
-const CHARS = "!<>-_\\\\/[]{}—=+*^?#________";
+const CHARS = "!<>-_\\\\/[]{}=+*^?#________";
 
 export default function ScrambleText({ text, className = "" }: { text: string; className?: string }) {
   const [displayText, setDisplayText] = useState("");

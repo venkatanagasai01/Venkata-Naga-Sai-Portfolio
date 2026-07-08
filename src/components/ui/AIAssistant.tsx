@@ -86,10 +86,10 @@ export default function AIAssistant() {
                 </div>
                 <div>
                   <h4 className="font-bold text-sm">Sai&apos;s Agent</h4>
-                  <p className="text-xs text-white/40">Powered by Intelligence</p>
+                  <p className="text-xs text-white/70">Powered by Intelligence</p>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="text-white/40 hover:text-white transition-colors">
+              <button onClick={() => setIsOpen(false)} className="text-white/70 hover:text-white transition-colors">
                 <X size={20} />
               </button>
             </div>
@@ -139,7 +139,7 @@ export default function AIAssistant() {
                 <button 
                   type="submit"
                   disabled={!input.trim() || isTyping}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white text-black disabled:opacity-50 disabled:bg-white/10 disabled:text-white/30 transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white text-black disabled:opacity-50 disabled:bg-white/10 disabled:text-white/60 transition-colors"
                 >
                   <Send size={14} />
                 </button>

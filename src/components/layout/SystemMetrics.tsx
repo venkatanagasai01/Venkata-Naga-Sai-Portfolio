@@ -52,12 +52,12 @@ export default function SystemMetrics() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1 }}
-        className="absolute bottom-6 left-6 flex flex-col font-mono text-[9px] md:text-[10px] text-white/30 uppercase tracking-widest leading-relaxed"
+        className="absolute bottom-6 left-6 flex flex-col font-mono text-[9px] md:text-[10px] text-white/60 uppercase tracking-widest leading-relaxed"
       >
         <span>{">"} FETCHING DEPENDENCIES... OK</span>
         <span>{">"} MOUNTING REACT_DOM... OK</span>
         <span>{">"} ESTABLISHING SECURE CONNECTION</span>
-        <span className="text-white/50 animate-pulse">_ AWAITING INPUT</span>
+        <span className="text-white/80 animate-pulse">_ AWAITING INPUT</span>
       </motion.div>
 
       {/* Vertical Scanner Lines (Left & Right) */}

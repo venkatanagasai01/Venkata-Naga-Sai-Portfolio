@@ -44,11 +44,8 @@ export default function AICore({ particleCount = 2000 }) {
 
     // Core pulsing and rotation
     if (coreRef.current) {
-      coreRef.current.rotation.y = time * 0.1;
-      coreRef.current.rotation.x = time * 0.05;
-      
-      // Look at mouse
-      coreRef.current.lookAt(localPointer.current);
+      coreRef.current.rotation.y = time * 0.1 + localPointer.current.x * 0.5;
+      coreRef.current.rotation.x = time * 0.05 - localPointer.current.y * 0.5;
     }
 
     // Outer rings rotation

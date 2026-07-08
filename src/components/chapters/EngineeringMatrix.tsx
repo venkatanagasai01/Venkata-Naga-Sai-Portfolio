@@ -28,7 +28,7 @@ export default function EngineeringMatrix() {
             <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">Engineering Matrix</h2>
           </div>
           <div className="text-right flex flex-col gap-2 pl-6">
-            <span className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-mono">Status</span>
+            <span className="text-white/70 text-[10px] uppercase tracking-[0.3em] font-mono">Status</span>
             <span className="text-white text-sm uppercase tracking-widest font-sans flex items-center justify-end gap-2">
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" /> Data Packets Flowing
             </span>
@@ -50,7 +50,7 @@ export default function EngineeringMatrix() {
                 onMouseLeave={() => setHoveredPipeline(null)}
               >
                 {/* Label */}
-                <div className={`w-48 text-right font-mono text-xs uppercase tracking-widest transition-opacity duration-300 ${isDimmed ? 'text-white/20' : 'text-[#D4AF37]'}`}>
+                <div className={`w-48 text-right font-mono text-xs uppercase tracking-widest transition-opacity duration-300 ${isDimmed ? 'text-white/50' : 'text-[#D4AF37]'}`}>
                   {pipeline.name}
                 </div>
 
@@ -73,7 +73,7 @@ export default function EngineeringMatrix() {
                   {pipeline.nodes.map((node, nIndex) => (
                     <div 
                       key={node} 
-                      className={`relative z-10 px-4 py-2 bg-[#050505] border transition-all duration-300 rounded ${isDimmed ? 'border-white/5 text-white/20' : isHovered ? 'border-[#D4AF37] text-white shadow-[0_0_20px_rgba(212,175,55,0.2)] scale-110' : 'border-white/20 text-white/60'}`}
+                      className={`relative z-10 px-4 py-2 bg-[#050505] border transition-all duration-300 rounded ${isDimmed ? 'border-white/5 text-white/50' : isHovered ? 'border-[#D4AF37] text-white shadow-[0_0_20px_rgba(212,175,55,0.2)] scale-110' : 'border-white/20 text-white/90'}`}
                     >
                       <span className="font-sans text-xs tracking-widest">{node}</span>
                       

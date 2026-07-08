@@ -56,7 +56,7 @@ export default function Chapter10Certifications() {
 
                 <div className="flex flex-col gap-2">
                   <h3 className="text-2xl font-serif text-white group-hover:text-[#D4AF37] transition-colors">{cert.name}</h3>
-                  <div className="flex items-center gap-4 text-white/50 font-mono text-xs">
+                  <div className="flex items-center gap-4 text-white/80 font-mono text-xs">
                     <span>{cert.issuer}</span>
                     <span>•</span>
                     <span className="flex items-center gap-1.5"><Calendar size={12} /> {cert.year}</span>
@@ -64,13 +64,13 @@ export default function Chapter10Certifications() {
                 </div>
 
                 <div className="flex flex-col gap-1 mt-2">
-                  <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest">Skills Acquired</span>
-                  <span className="text-white/70 font-sans text-sm">{cert.skillsLearned}</span>
+                  <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest">Skills Acquired</span>
+                  <span className="text-white font-sans text-sm">{cert.skillsLearned}</span>
                 </div>
 
                 <div className="pt-6 border-t border-white/5 flex justify-between items-center">
-                  <span className="text-white/30 font-mono text-[10px] tracking-widest">ID: {cert.id}</span>
-                  <a href={cert.url} className="flex items-center gap-2 text-white/60 hover:text-[#D4AF37] text-xs uppercase tracking-widest font-mono transition-colors">
+                  <span className="text-white/60 font-mono text-[10px] tracking-widest">ID: {cert.id}</span>
+                  <a href={cert.url} className="flex items-center gap-2 text-white/90 hover:text-[#D4AF37] text-xs uppercase tracking-widest font-mono transition-colors">
                     View Credential <ExternalLink size={14} />
                   </a>
                 </div>

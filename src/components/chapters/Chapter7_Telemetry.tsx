@@ -31,7 +31,7 @@ export default function Chapter7Telemetry() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-right flex flex-col gap-2 border-l border-[#D4AF37]/30 pl-6 max-w-sm"
           >
-            <p className="text-white/50 font-sans font-light text-sm leading-relaxed">
+            <p className="text-white/80 font-sans font-light text-sm leading-relaxed">
               Continuous validation of algorithmic proficiency and enterprise-level system architecture capabilities.
             </p>
           </motion.div>
@@ -47,18 +47,18 @@ export default function Chapter7Telemetry() {
             transition={{ duration: 1 }}
             className="lg:w-1/3 flex flex-col gap-8"
           >
-            <h3 className="text-2xl font-serif text-white/80 border-b border-white/10 pb-4">Algorithmic Benchmarks</h3>
+            <h3 className="text-2xl font-serif text-white border-b border-white/10 pb-4">Algorithmic Benchmarks</h3>
             <div className="flex flex-col gap-8">
               <div className="p-8 border border-white/10 bg-white/[0.01] rounded-2xl hover:border-[#D4AF37]/30 transition-colors flex flex-col justify-between">
                 <div>
                   <span className="text-5xl font-serif text-[#D4AF37] block mb-4">200+</span>
-                  <p className="text-white/60 font-sans font-light leading-relaxed mb-4">
+                  <p className="text-white/90 font-sans font-light leading-relaxed mb-4">
                     Complex algorithmic problems solved and optimized across competitive programming environments.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
                   {["Dynamic Programming", "Graph Theory", "Advanced Trees", "Heuristics"].map(skill => (
-                    <span key={skill} className="text-[10px] uppercase tracking-widest text-white/40">{skill}</span>
+                    <span key={skill} className="text-[10px] uppercase tracking-widest text-white/70">{skill}</span>
                   ))}
                 </div>
               </div>
@@ -66,13 +66,13 @@ export default function Chapter7Telemetry() {
               <div className="p-8 border border-white/10 bg-white/[0.01] rounded-2xl hover:border-[#D4AF37]/30 transition-colors flex flex-col justify-between">
                 <div>
                   <span className="text-5xl font-serif text-[#D4AF37] block mb-4">3+</span>
-                  <p className="text-white/60 font-sans font-light leading-relaxed mb-4">
+                  <p className="text-white/90 font-sans font-light leading-relaxed mb-4">
                     Enterprise-grade, full-stack AI architectures engineered, containerized, and deployed to production.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
                   {["Microservices", "REST APIs", "CI/CD", "Load Balancing"].map(skill => (
-                    <span key={skill} className="text-[10px] uppercase tracking-widest text-white/40">{skill}</span>
+                    <span key={skill} className="text-[10px] uppercase tracking-widest text-white/70">{skill}</span>
                   ))}
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function Chapter7Telemetry() {
             transition={{ duration: 1, delay: 0.2 }}
             className="lg:w-2/3 flex flex-col"
           >
-            <h3 className="text-2xl font-serif text-white/80 border-b border-white/10 pb-4 mb-8">Enterprise Knowledge Base</h3>
+            <h3 className="text-2xl font-serif text-white border-b border-white/10 pb-4 mb-8">Enterprise Knowledge Base</h3>
             <div className="flex flex-col gap-6">
               {[
                 { 
@@ -115,9 +115,9 @@ export default function Chapter7Telemetry() {
                   
                   <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-4 relative z-10">
                     <span className="text-white/90 font-serif text-xl md:text-2xl group-hover:text-[#D4AF37] transition-colors">{cert.title}</span>
-                    <span className="text-[#D4AF37]/60 font-sans text-xs uppercase tracking-[0.2em] mt-2 md:mt-0 bg-[#D4AF37]/5 px-3 py-1 rounded-full border border-[#D4AF37]/20">{cert.issuer}</span>
+                    <span className="text-[#D4AF37]/90 font-sans text-xs uppercase tracking-[0.2em] mt-2 md:mt-0 bg-[#D4AF37]/5 px-3 py-1 rounded-full border border-[#D4AF37]/20">{cert.issuer}</span>
                   </div>
-                  <p className="text-white/50 font-sans font-light leading-relaxed relative z-10">
+                  <p className="text-white/80 font-sans font-light leading-relaxed relative z-10">
                     {cert.description}
                   </p>
                 </div>

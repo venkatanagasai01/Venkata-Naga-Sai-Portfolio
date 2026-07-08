@@ -108,7 +108,7 @@ export default function OSBootSequence() {
             />
           </div>
           
-          <div className="absolute top-8 right-8 text-white/30 font-mono text-[10px] uppercase tracking-widest z-20">
+          <div className="absolute top-8 right-8 text-white/60 font-mono text-[10px] uppercase tracking-widest z-20">
             [CLICK ANYWHERE TO SKIP]
           </div>
         </motion.div>

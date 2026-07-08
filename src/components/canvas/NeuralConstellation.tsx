@@ -44,20 +44,14 @@ export default function NeuralConstellation() {
   }, []);
 
   useFrame((state) => {
-    if (groupRef.current) {
-      // Gentle floating rotation
-      if (!activeNode) {
-        groupRef.current.rotation.y += 0.001;
-        groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
-      }
+    if (groupRef.current && !activeNode) {
+      // Base gentle rotation combined with cursor influence
+      const time = state.clock.elapsedTime;
+      const targetX = Math.sin(time * 0.2) * 0.1 - (state.pointer.y * Math.PI) / 10;
+      const targetY = time * 0.05 + (state.pointer.x * Math.PI) / 10;
       
-      // Cursor magnetism
-      if (hoveredNode && !activeNode) {
-        const targetX = (state.pointer.x * Math.PI) / 10;
-        const targetY = (state.pointer.y * Math.PI) / 10;
-        groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, targetX, 0.05);
-        groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, targetY, 0.05);
-      }
+      groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, targetX, 0.05);
+      groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, targetY, 0.05);
     }
   });
 
@@ -139,13 +133,13 @@ export default function NeuralConstellation() {
                     <h3 className="font-serif text-2xl text-[#D4AF37]">{node.category}</h3>
                     <button 
                       onClick={(e) => { e.stopPropagation(); setActiveNode(null); }}
-                      className="text-white/40 hover:text-white transition-colors"
+                      className="text-white/70 hover:text-white transition-colors"
                     >
                       ✕
                     </button>
                   </div>
                   
-                  <p className="text-white/70 font-light text-sm mb-6 leading-relaxed">
+                  <p className="text-white font-light text-sm mb-6 leading-relaxed">
                     {node.description}
                   </p>
                   
@@ -159,7 +153,7 @@ export default function NeuralConstellation() {
                       <span className="text-[#D4AF37] font-mono text-[10px] uppercase tracking-widest block mb-2">Stack Vectors</span>
                       <div className="flex flex-wrap gap-2">
                         {node.techs.map(t => (
-                          <span key={t} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[10px] uppercase tracking-widest text-white/70">
+                          <span key={t} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[10px] uppercase tracking-widest text-white">
                             {t}
                           </span>
                         ))}

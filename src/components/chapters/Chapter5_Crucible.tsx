@@ -40,7 +40,7 @@ export default function Chapter5Crucible() {
         <div className="flex flex-col gap-4 text-center items-center">
           <span className="text-[#D4AF37] font-mono text-[10px] uppercase tracking-[0.4em]">Mission Log</span>
           <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">Engineering Trajectory</h2>
-          <p className="text-white/50 font-sans font-light leading-relaxed max-w-lg mt-4">
+          <p className="text-white/80 font-sans font-light leading-relaxed max-w-lg mt-4">
             A chronological record of algorithmic foundations, system architectures, and professional deployments.
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function Chapter5Crucible() {
                         {log.year} {"//"} {log.category}
                       </span>
                       <h3 className="text-2xl font-serif text-white mb-4 group-hover:text-[#D4AF37] transition-colors">{log.title}</h3>
-                      <p className="text-white/60 font-sans font-light leading-relaxed">
+                      <p className="text-white/90 font-sans font-light leading-relaxed">
                         {log.description}
                       </p>
                     </div>

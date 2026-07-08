@@ -69,7 +69,7 @@ export default function Navigation() {
                   data-cursor="magnetic"
                   onClick={() => setActive(item.name)}
                   className={`relative flex items-center justify-center px-6 py-2.5 rounded-full transition-colors duration-300 ${
-                    isActive ? "text-black" : "text-white/60 hover:text-white"
+                    isActive ? "text-black" : "text-white/90 hover:text-white"
                   }`}
                 >
                   {isActive && (

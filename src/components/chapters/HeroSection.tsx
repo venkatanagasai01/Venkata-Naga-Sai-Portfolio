@@ -92,7 +92,7 @@ export default function HeroSection() {
           <h2 className="text-[#D4AF37] font-mono text-sm md:text-base uppercase tracking-[0.3em]">
             AI & Full Stack Developer
           </h2>
-          <p className="text-white/60 font-sans text-lg md:text-xl font-light max-w-2xl mx-auto">
+          <p className="text-white/90 font-sans text-lg md:text-xl font-light max-w-2xl mx-auto">
             Building Intelligent Systems with AI, Machine Learning, and Modern Web Technologies.
           </p>
         </motion.div>
@@ -123,7 +123,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 3.5 }}
-          className="mt-16 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-white/40 font-mono text-[10px] md:text-xs uppercase tracking-widest"
+          className="mt-16 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-white/70 font-mono text-[10px] md:text-xs uppercase tracking-widest"
         >
           <span className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
@@ -142,7 +142,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 4.5, duration: 2 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 text-white/30"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 text-white/60"
       >
         <span className="text-[9px] uppercase tracking-[0.5em] font-mono opacity-50">Initiate System Descent</span>
         <div className="w-[1px] h-20 bg-white/5 relative overflow-hidden">

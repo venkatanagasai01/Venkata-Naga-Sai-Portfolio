@@ -58,7 +58,7 @@ function GlassPanel({ title, desc, id }: { title: string, desc: string, id: stri
         
         <div>
           <h3 className="text-2xl font-serif text-white mb-4 group-hover:text-[#D4AF37] transition-colors">{title}</h3>
-          <p className="text-white/60 font-sans font-light text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
+          <p className="text-white/90 font-sans font-light text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
             {desc}
           </p>
         </div>

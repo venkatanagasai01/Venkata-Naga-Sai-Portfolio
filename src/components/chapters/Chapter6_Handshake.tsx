@@ -27,7 +27,7 @@ export default function Chapter6Handshake() {
           <h2 className="text-5xl md:text-7xl font-serif text-white tracking-tight">
             Establish Connection
           </h2>
-          <p className="text-white/50 font-sans text-lg md:text-xl font-light max-w-2xl mx-auto">
+          <p className="text-white/80 font-sans text-lg md:text-xl font-light max-w-2xl mx-auto">
             Ready to architect the next generation of intelligent software. Initiate a secure line of communication below.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function Chapter6Handshake() {
                 <Mail size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
-                <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest">Email</span>
+                <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest">Email</span>
                 <span className="text-white font-sans text-sm md:text-base">venkatanagasai01@gmail.com</span>
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function Chapter6Handshake() {
                 <Phone size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
-                <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest">Phone</span>
+                <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest">Phone</span>
                 <span className="text-white font-sans text-sm md:text-base">+91 89190 25292</span>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function Chapter6Handshake() {
                 <MapPin size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
-                <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest">Location</span>
+                <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest">Location</span>
                 <span className="text-white font-sans text-sm md:text-base">Remote / India</span>
               </div>
             </div>
@@ -77,11 +77,11 @@ export default function Chapter6Handshake() {
                 <User size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
-                <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest">Network</span>
+                <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest">Network</span>
                 <span className="text-white font-sans text-sm md:text-base">LinkedIn</span>
               </div>
             </div>
-            <TerminalSquare size={16} className="text-white/20 group-hover:text-[#D4AF37] transition-colors hidden md:block" />
+            <TerminalSquare size={16} className="text-white/50 group-hover:text-[#D4AF37] transition-colors hidden md:block" />
           </a>
 
           <a href="https://github.com/venkatanagasai01" target="_blank" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-[#D4AF37]/50 transition-all duration-300">
@@ -90,11 +90,11 @@ export default function Chapter6Handshake() {
                 <Code size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
-                <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest">Repositories</span>
+                <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest">Repositories</span>
                 <span className="text-white font-sans text-sm md:text-base">GitHub</span>
               </div>
             </div>
-            <TerminalSquare size={16} className="text-white/20 group-hover:text-[#D4AF37] transition-colors hidden md:block" />
+            <TerminalSquare size={16} className="text-white/50 group-hover:text-[#D4AF37] transition-colors hidden md:block" />
           </a>
 
           <a href="/resume.pdf" target="_blank" className="group flex items-center justify-between p-6 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-2xl hover:bg-[#D4AF37]/20 hover:border-[#D4AF37] transition-all duration-300 lg:col-span-1 md:col-span-2">
@@ -103,11 +103,11 @@ export default function Chapter6Handshake() {
                 <FileDown size={24} />
               </div>
               <div className="flex flex-col items-start gap-1">
-                <span className="text-[#D4AF37]/70 font-mono text-[10px] uppercase tracking-widest">Document</span>
+                <span className="text-[#D4AF37] font-mono text-[10px] uppercase tracking-widest">Document</span>
                 <span className="text-[#D4AF37] font-sans text-sm md:text-base">Download Resume</span>
               </div>
             </div>
-            <TerminalSquare size={16} className="text-[#D4AF37]/50 group-hover:text-[#D4AF37] transition-colors hidden md:block" />
+            <TerminalSquare size={16} className="text-[#D4AF37]/80 group-hover:text-[#D4AF37] transition-colors hidden md:block" />
           </a>
 
         </div>

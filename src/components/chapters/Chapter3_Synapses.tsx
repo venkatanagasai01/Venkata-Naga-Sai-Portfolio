@@ -51,11 +51,9 @@ export default function Chapter3Synapses() {
         
         {/* Absolute Positioning for the Canvas */}
         <div className="absolute inset-0 z-0" ref={ref}>
-          {isInView && (
-            <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 1.5]} gl={{ alpha: true, antialias: true }}>
-              <NeuralConstellation />
-            </Canvas>
-          )}
+          <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 1.5]} gl={{ alpha: true, antialias: true }}>
+            <NeuralConstellation />
+          </Canvas>
         </div>
 
         {/* Floating HUD over the WebGL */}
@@ -83,15 +81,15 @@ export default function Chapter3Synapses() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-left md:text-right flex flex-col gap-2 pl-4 md:pl-6 max-w-sm pointer-events-auto bg-black/40 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-4 md:p-0 rounded-xl border border-white/5 md:border-transparent"
             >
-              <span className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-mono">System Instructions</span>
-              <p className="text-white/70 font-sans font-light text-sm leading-relaxed mt-2">
+              <span className="text-white/70 text-[10px] uppercase tracking-[0.3em] font-mono">System Instructions</span>
+              <p className="text-white font-sans font-light text-sm leading-relaxed mt-2">
                 Interact with the neural clusters to access deep architectural insights. 
                 The constellation represents the interconnected intelligence of the operating system.
               </p>
             </motion.div>
           </div>
           
-          <div className="w-full border-t border-white/10 pt-4 md:pt-6 flex flex-col md:flex-row justify-between items-start md:items-center md:gap-0 gap-4 text-white/30 text-[10px] uppercase font-mono tracking-widest bg-black/40 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-4 md:p-0 rounded-xl md:rounded-none border border-white/5 md:border-0">
+          <div className="w-full border-t border-white/10 pt-4 md:pt-6 flex flex-col md:flex-row justify-between items-start md:items-center md:gap-0 gap-4 text-white/60 text-[10px] uppercase font-mono tracking-widest bg-black/40 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-4 md:p-0 rounded-xl md:rounded-none border border-white/5 md:border-0">
             <div className="flex flex-wrap items-center gap-2 md:gap-4">
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> Nodes Active
@@ -115,10 +113,10 @@ export default function Chapter3Synapses() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="group flex flex-col gap-6 p-8 bg-white/[0.01] border border-white/5 rounded-2xl hover:bg-white/[0.03] hover:border-[#D4AF37]/30 transition-all duration-500"
+                className="group flex flex-col gap-6 p-8 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-[#D4AF37]/40 transition-all duration-500 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
               >
-                <div className="flex items-center gap-4 border-b border-white/5 pb-4">
-                  <div className="p-3 bg-white/5 rounded-xl group-hover:text-[#D4AF37] group-hover:bg-[#D4AF37]/10 transition-colors text-white/60">
+                <div className="flex items-center gap-4 border-b border-white/10 pb-4">
+                  <div className="p-3 bg-white/10 rounded-xl group-hover:text-[#D4AF37] group-hover:bg-[#D4AF37]/10 transition-colors text-white/90">
                     <category.icon size={20} />
                   </div>
                   <h3 className="text-white font-serif text-2xl tracking-wide">{category.title}</h3>
@@ -128,7 +126,7 @@ export default function Chapter3Synapses() {
                   {category.skills.map((skill) => (
                     <span 
                       key={skill} 
-                      className="px-4 py-2 bg-black/40 border border-white/10 rounded-lg text-sm text-white/70 font-mono tracking-wide hover:border-[#D4AF37]/50 hover:text-white transition-all cursor-default"
+                      className="px-4 py-2 bg-white/5 border border-white/20 rounded-lg text-sm text-white/90 font-mono tracking-wide hover:border-[#D4AF37]/60 hover:text-white hover:bg-[#D4AF37]/10 transition-all cursor-default shadow-sm"
                     >
                       {skill}
                     </span>

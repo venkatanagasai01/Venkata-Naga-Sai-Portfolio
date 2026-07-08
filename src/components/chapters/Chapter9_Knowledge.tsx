@@ -34,7 +34,7 @@ export default function Chapter9Knowledge() {
             <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">Classified Index</h2>
           </div>
           <div className="text-left md:text-right flex flex-col gap-2 pl-4 md:pl-6 md:border-l-0 border-l border-[#D4AF37]/30">
-            <span className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-mono">Clearance</span>
+            <span className="text-white/70 text-[10px] uppercase tracking-[0.3em] font-mono">Clearance</span>
             <span className="text-red-500 text-sm uppercase tracking-widest font-sans flex items-center gap-2">
               Level 4 Granted
             </span>
@@ -44,29 +44,29 @@ export default function Chapter9Knowledge() {
         {/* Top Secret Document Wrapper */}
         <div className="border border-white/10 bg-[#030303] rounded-sm p-8 md:p-12 relative overflow-hidden group">
           
-          <div className="absolute top-4 right-4 border border-white/20 text-white/20 px-2 py-1 font-mono text-[8px] uppercase tracking-widest -rotate-12 pointer-events-none group-hover:border-red-500/50 group-hover:text-red-500/50 transition-colors">
+          <div className="absolute top-4 right-4 border border-white/20 text-white/50 px-2 py-1 font-mono text-[8px] uppercase tracking-widest -rotate-12 pointer-events-none group-hover:border-red-500/50 group-hover:text-red-500/50 transition-colors">
             Confidential
           </div>
 
           <div className="flex flex-col gap-8">
             <div className="flex flex-col md:flex-row gap-16 border-b border-white/5 pb-8">
               <div className="flex flex-col gap-2 w-full md:w-1/2">
-                <span className="text-white/40 font-mono text-[10px] uppercase tracking-[0.2em]">Designation</span>
+                <span className="text-white/70 font-mono text-[10px] uppercase tracking-[0.2em]">Designation</span>
                 <h3 className="text-2xl md:text-3xl font-serif text-white"><ScrambleText text={EDUCATION.degree} /></h3>
               </div>
               <div className="flex flex-col gap-2">
-                <span className="text-white/40 font-mono text-[10px] uppercase tracking-[0.2em]">Facility</span>
+                <span className="text-white/70 font-mono text-[10px] uppercase tracking-[0.2em]">Facility</span>
                 <span className="text-white text-lg font-sans"><ScrambleText text={EDUCATION.university} /></span>
                 <div className="flex items-center gap-4 mt-1">
                   <span className="text-[#D4AF37] font-mono text-xs">{EDUCATION.year}</span>
-                  <span className="text-white/30">|</span>
+                  <span className="text-white/60">|</span>
                   <span className="text-green-400 font-mono text-xs uppercase tracking-widest">CGPA: {EDUCATION.cgpa}</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col gap-6">
-              <span className="text-white/40 font-mono text-[10px] uppercase tracking-[0.2em]">Core Vectors (Click to Expand)</span>
+              <span className="text-white/70 font-mono text-[10px] uppercase tracking-[0.2em]">Core Vectors (Click to Expand)</span>
               
               <div className="grid grid-cols-1 gap-2">
                 {EDUCATION.subjects.map((sub, i) => {
@@ -78,8 +78,8 @@ export default function Chapter9Knowledge() {
                       className={`border p-4 cursor-pointer transition-all duration-300 ${isActive ? 'bg-white/[0.05] border-[#D4AF37]/50' : 'bg-transparent border-white/5 hover:border-white/20'}`}
                     >
                       <div className="flex justify-between items-center">
-                        <span className={`font-mono text-sm uppercase tracking-widest ${isActive ? 'text-[#D4AF37]' : 'text-white/80'}`}>{sub.name}</span>
-                        <span className="text-white/40 text-lg">{isActive ? '−' : '+'}</span>
+                        <span className={`font-mono text-sm uppercase tracking-widest ${isActive ? 'text-[#D4AF37]' : 'text-white'}`}>{sub.name}</span>
+                        <span className="text-white/70 text-lg">{isActive ? '−' : '+'}</span>
                       </div>
                       
                       <AnimatePresence>
@@ -92,12 +92,12 @@ export default function Chapter9Knowledge() {
                           >
                             <div className="pt-4 mt-4 border-t border-white/10 flex flex-col gap-4">
                               <div>
-                                <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest block mb-1">Theoretical Focus</span>
-                                <p className="text-white/80 font-light text-sm">{sub.desc}</p>
+                                <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest block mb-1">Theoretical Focus</span>
+                                <p className="text-white font-light text-sm">{sub.desc}</p>
                               </div>
                               <div>
-                                <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest block mb-1">Applied Engineering</span>
-                                <p className="text-white/80 font-light text-sm text-[#D4AF37]">{sub.apps}</p>
+                                <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest block mb-1">Applied Engineering</span>
+                                <p className="text-white font-light text-sm text-[#D4AF37]">{sub.apps}</p>
                               </div>
                             </div>
                           </motion.div>

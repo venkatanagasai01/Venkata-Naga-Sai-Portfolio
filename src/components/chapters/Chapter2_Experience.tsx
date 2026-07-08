@@ -110,7 +110,7 @@ export default function Chapter2Experience() {
           <div className="w-full xl:w-[400px] bg-black/50 p-8 md:p-12 border-b xl:border-b-0 xl:border-r border-white/10 flex flex-col shrink-0">
             
             <div className="flex flex-col gap-8">
-              <div className="flex items-center gap-4 text-white/40 font-mono text-xs uppercase tracking-widest">
+              <div className="flex items-center gap-4 text-white/70 font-mono text-xs uppercase tracking-widest">
                 <Briefcase size={16} className="text-[#D4AF37]" />
                 Primary Deployment
               </div>
@@ -118,14 +118,14 @@ export default function Chapter2Experience() {
               <div className="flex flex-col gap-2">
                 <h3 className="text-3xl font-serif text-white">{exp.company}</h3>
                 <span className="text-[#D4AF37] font-mono text-sm">{exp.product}</span>
-                <span className="text-white/80 font-sans text-lg mt-2">{exp.role}</span>
+                <span className="text-white font-sans text-lg mt-2">{exp.role}</span>
               </div>
 
               <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-3 text-white/60 font-mono text-xs">
+                <div className="flex items-center gap-3 text-white/90 font-mono text-xs">
                   <Calendar size={14} /> {exp.duration}
                 </div>
-                <div className="flex items-center gap-3 text-white/60 font-mono text-xs">
+                <div className="flex items-center gap-3 text-white/90 font-mono text-xs">
                   <MapPin size={14} /> {exp.location}
                 </div>
               </div>
@@ -133,8 +133,8 @@ export default function Chapter2Experience() {
               <div className="w-full h-[1px] bg-white/10" />
 
               <div className="flex flex-col gap-2">
-                <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest">Overview</span>
-                <p className="text-white/80 font-sans font-light leading-relaxed text-sm">
+                <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest">Overview</span>
+                <p className="text-white font-sans font-light leading-relaxed text-sm">
                   {exp.overview}
                 </p>
               </div>
@@ -142,10 +142,10 @@ export default function Chapter2Experience() {
               <div className="w-full h-[1px] bg-white/10" />
 
               <div className="flex flex-col gap-4">
-                <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest">Tech Stack</span>
+                <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest">Tech Stack</span>
                 <div className="flex flex-wrap gap-2">
                   {exp.techStack.map(tech => (
-                    <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded text-[10px] text-white/70 font-mono uppercase tracking-widest">
+                    <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded text-[10px] text-white font-mono uppercase tracking-widest">
                       {tech}
                     </span>
                   ))}
@@ -170,12 +170,12 @@ export default function Chapter2Experience() {
                     className="w-full p-6 flex items-center justify-between text-left"
                   >
                     <div className="flex items-center gap-4">
-                      <section.icon size={18} className={expandedSection === section.id ? "text-[#D4AF37]" : "text-white/40"} />
-                      <span className={`font-serif text-lg md:text-xl transition-colors ${expandedSection === section.id ? "text-white" : "text-white/60"}`}>
+                      <section.icon size={18} className={expandedSection === section.id ? "text-[#D4AF37]" : "text-white/70"} />
+                      <span className={`font-serif text-lg md:text-xl transition-colors ${expandedSection === section.id ? "text-white" : "text-white/90"}`}>
                         {section.title}
                       </span>
                     </div>
-                    <ChevronRight size={18} className={`text-white/40 transition-transform duration-300 ${expandedSection === section.id ? "rotate-90 text-[#D4AF37]" : ""}`} />
+                    <ChevronRight size={18} className={`text-white/70 transition-transform duration-300 ${expandedSection === section.id ? "rotate-90 text-[#D4AF37]" : ""}`} />
                   </button>
 
                   <div 
@@ -188,7 +188,7 @@ export default function Chapter2Experience() {
                         const rest = words.slice(1).join(" ");
                         
                         return (
-                          <li key={idx} className="flex items-start gap-4 text-white/70 font-light leading-relaxed">
+                          <li key={idx} className="flex items-start gap-4 text-white font-light leading-relaxed">
                             <CheckCircle2 size={16} className="text-[#D4AF37] shrink-0 mt-1" />
                             <span>
                               <strong className="text-white font-medium">{firstWord}</strong> {rest}

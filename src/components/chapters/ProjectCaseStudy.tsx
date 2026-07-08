@@ -66,13 +66,13 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
           
           <div className="flex flex-col items-center gap-8 max-w-4xl">
             <span className="text-[#D4AF37] font-mono text-xs uppercase tracking-[0.3em]">{project.tagline}</span>
-            <p className="text-white/80 font-sans text-xl md:text-2xl font-light leading-relaxed">
+            <p className="text-white font-sans text-xl md:text-2xl font-light leading-relaxed">
               {project.overview}
             </p>
           </div>
         </div>
 
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-white/30">
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-white/60">
           <div className="w-[1px] h-16 bg-white/10 relative overflow-hidden">
             <motion.div 
               className="w-full h-1/2 bg-[#D4AF37]"
@@ -105,7 +105,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
               viewport={{ once: true, margin: "-100px" }}
             >
               <SectionHeading title="The Problem" subtitle="01 // Challenge" />
-              <p className="text-white/70 font-sans text-lg font-light leading-relaxed border-l border-red-500/30 pl-6">
+              <p className="text-white font-sans text-lg font-light leading-relaxed border-l border-red-500/30 pl-6">
                 {project.problemStatement}
               </p>
             </motion.section>
@@ -119,7 +119,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
               transition={{ delay: 0.2 }}
             >
               <SectionHeading title="The Solution" subtitle="02 // Approach" />
-              <p className="text-white/70 font-sans text-lg font-light leading-relaxed border-l border-[#D4AF37]/30 pl-6">
+              <p className="text-white font-sans text-lg font-light leading-relaxed border-l border-[#D4AF37]/30 pl-6">
                 {project.solution}
               </p>
             </motion.section>
@@ -138,7 +138,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
               {project.features.map((feature, i) => (
                 <div key={i} className="flex items-start gap-4 p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
                   <Activity className="text-[#D4AF37] shrink-0 mt-1" size={20} />
-                  <span className="text-white/80 font-light leading-relaxed">{feature}</span>
+                  <span className="text-white font-light leading-relaxed">{feature}</span>
                 </div>
               ))}
             </div>
@@ -154,7 +154,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
           <SectionHeading title="System Architecture" subtitle="04 // Engineering" />
           <div className="flex flex-col lg:flex-row gap-16">
             <div className="flex-1 flex flex-col gap-6">
-              <p className="text-white/70 font-sans text-lg font-light leading-relaxed">
+              <p className="text-white font-sans text-lg font-light leading-relaxed">
                 {project.systemArchitecture}
               </p>
               
@@ -170,7 +170,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
                   <span className="text-blue-400 font-mono text-xs uppercase tracking-widest flex items-center gap-2 mb-4">
                     <Server size={14} /> Deployment & Infrastructure
                   </span>
-                  <p className="text-white/80 font-light">{project.deployment}</p>
+                  <p className="text-white font-light">{project.deployment}</p>
                 </div>
               )}
 
@@ -180,7 +180,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
                   <span className="text-[#D4AF37] font-mono text-xs uppercase tracking-widest flex items-center gap-2 mb-4">
                     <Network size={14} /> AI Pipeline
                   </span>
-                  <p className="text-white/80 font-light">{project.aiPipeline}</p>
+                  <p className="text-white font-light">{project.aiPipeline}</p>
                 </div>
               )}
             </div>
@@ -189,7 +189,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
               <h4 className="text-white font-serif text-2xl mb-8">Technology Stack</h4>
               <div className="flex flex-wrap gap-4">
                 {project.technologies.map((tech, i) => (
-                  <span key={i} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white/80 font-mono tracking-wide hover:border-[#D4AF37]/50 transition-colors">
+                  <span key={i} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white font-mono tracking-wide hover:border-[#D4AF37]/50 transition-colors">
                     {tech}
                   </span>
                 ))}
@@ -211,7 +211,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
                 {project.challenges.map((chal, i) => (
                   <div key={i} className="flex items-start gap-4 p-6 bg-red-900/10 border border-red-500/20 rounded-2xl">
                     <AlertCircle className="text-red-400 shrink-0 mt-1" size={20} />
-                    <span className="text-white/70 font-light leading-relaxed">{chal}</span>
+                    <span className="text-white font-light leading-relaxed">{chal}</span>
                   </div>
                 ))}
               </div>
@@ -229,7 +229,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
                 {project.lessonsLearned.map((lesson, i) => (
                   <div key={i} className="flex items-start gap-4 p-6 bg-blue-900/10 border border-blue-500/20 rounded-2xl">
                     <BookOpen className="text-blue-400 shrink-0 mt-1" size={20} />
-                    <span className="text-white/70 font-light leading-relaxed">{lesson}</span>
+                    <span className="text-white font-light leading-relaxed">{lesson}</span>
                   </div>
                 ))}
               </div>
@@ -249,7 +249,7 @@ export default function ProjectCaseStudy({ project }: { project: ProjectData }) 
               {project.futureImprovements.map((imp, i) => (
                 <div key={i} className="flex items-start gap-4 p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
                   <TrendingUp className="text-green-400 shrink-0 mt-1" size={20} />
-                  <span className="text-white/70 font-light leading-relaxed">{imp}</span>
+                  <span className="text-white font-light leading-relaxed">{imp}</span>
                 </div>
               ))}
             </div>

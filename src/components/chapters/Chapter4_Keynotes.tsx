@@ -36,7 +36,7 @@ export default function Chapter4Keynotes() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-left md:text-right flex flex-col gap-2 border-l border-[#D4AF37]/30 pl-4 md:pl-6"
           >
-            <span className="text-white/40 text-[10px] uppercase tracking-[0.3em]">System</span>
+            <span className="text-white/70 text-[10px] uppercase tracking-[0.3em]">System</span>
             <span className="text-[#D4AF37] text-sm uppercase tracking-widest">Active Nodes: {projects.length}</span>
           </motion.div>
         </div>
@@ -58,14 +58,14 @@ export default function Chapter4Keynotes() {
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 bg-[#D4AF37]/5 blur-[60px] rounded-full group-hover:w-[120%] group-hover:h-[200%] transition-all duration-700 pointer-events-none" />
 
                   <div className="flex flex-col gap-4 relative z-10 w-full md:w-1/2">
-                    <span className="text-white/40 font-mono text-[10px] uppercase tracking-[0.3em]">Node {String(index + 1).padStart(2, '0')}</span>
+                    <span className="text-white/70 font-mono text-[10px] uppercase tracking-[0.3em]">Node {String(index + 1).padStart(2, '0')}</span>
                     <motion.h3 
                       layoutId={`project-title-${project.id}`}
                       className="text-3xl md:text-5xl font-serif text-white group-hover:text-[#D4AF37] transition-colors"
                     >
                       {project.title}
                     </motion.h3>
-                    <p className="text-white/50 font-sans font-light mt-2 line-clamp-2">
+                    <p className="text-white/80 font-sans font-light mt-2 line-clamp-2">
                       {project.overview}
                     </p>
                   </div>
@@ -73,13 +73,13 @@ export default function Chapter4Keynotes() {
                   <div className="flex flex-col items-end gap-6 relative z-10 mt-8 md:mt-0 w-full md:w-auto">
                     <div className="flex gap-4">
                       {project.technologies.slice(0, 3).map((tech, i) => (
-                        <span key={i} className="px-3 py-1 bg-black border border-white/10 rounded-full text-[10px] uppercase tracking-widest text-white/50">
+                        <span key={i} className="px-3 py-1 bg-black border border-white/10 rounded-full text-[10px] uppercase tracking-widest text-white/80">
                           {tech}
                         </span>
                       ))}
                     </div>
                     
-                    <div className="flex items-center gap-4 text-white/60 group-hover:text-white transition-colors">
+                    <div className="flex items-center gap-4 text-white/90 group-hover:text-white transition-colors">
                       <span className="text-xs uppercase tracking-[0.2em] font-sans">Initialize Connect</span>
                       <div className="p-3 bg-white/5 rounded-full group-hover:bg-[#D4AF37]/20 group-hover:text-[#D4AF37] transition-colors">
                         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

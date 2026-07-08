@@ -58,7 +58,7 @@ export default function LiveStatus() {
             <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">Engineering Achievements</h2>
           </div>
           <div className="text-right flex flex-col gap-2 pl-6">
-            <span className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-mono">Uptime</span>
+            <span className="text-white/70 text-[10px] uppercase tracking-[0.3em] font-mono">Uptime</span>
             <span className="text-[#D4AF37] text-sm uppercase tracking-widest font-sans flex items-center gap-2">
               99.99% Nominal
             </span>
@@ -82,7 +82,7 @@ export default function LiveStatus() {
               <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               
               <div className="mt-4 pt-4 border-t border-white/10 flex justify-between items-center">
-                <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest">{stat.label}</span>
+                <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest">{stat.label}</span>
                 <div className="flex gap-1">
                   {[...Array(3)].map((_, j) => (
                     <span key={j} className="w-1 h-3 bg-[#D4AF37]/20 group-hover:bg-[#D4AF37] transition-colors" style={{ transitionDelay: `${j * 100}ms` }} />
