@@ -111,7 +111,7 @@ export default function HeroSection() {
           <a href="https://github.com/venkatanagasai01" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-white/[0.05] border border-white/10 rounded-full hover:bg-white/[0.1] hover:border-white/30 transition-all text-white font-sans text-xs uppercase tracking-widest">
             <Code size={16} /> View GitHub
           </a>
-          <a href="https://linkedin.com" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-white/[0.05] border border-white/10 rounded-full hover:bg-white/[0.1] hover:border-white/30 transition-all text-white font-sans text-xs uppercase tracking-widest">
+          <a href="https://www.linkedin.com/in/venkata-naga-sai-adapala-91a8732a6/" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-white/[0.05] border border-white/10 rounded-full hover:bg-white/[0.1] hover:border-white/30 transition-all text-white font-sans text-xs uppercase tracking-widest">
             <User size={16} /> View LinkedIn
           </a>
           <a href="#contact" className="flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full hover:bg-[#D4AF37] hover:text-white transition-all font-sans text-xs uppercase tracking-widest">

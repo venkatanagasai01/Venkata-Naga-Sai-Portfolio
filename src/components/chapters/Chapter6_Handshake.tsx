@@ -71,7 +71,7 @@ export default function Chapter6Handshake() {
             </div>
           </div>
 
-          <a href="https://linkedin.com" target="_blank" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-[#D4AF37]/50 transition-all duration-300">
+          <a href="https://www.linkedin.com/in/venkata-naga-sai-adapala-91a8732a6/" target="_blank" className="group flex items-center justify-between p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-[#D4AF37]/50 transition-all duration-300">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-white/5 rounded-xl group-hover:bg-[#D4AF37]/20 group-hover:text-[#D4AF37] transition-colors text-white">
                 <User size={24} />
