@@ -105,8 +105,8 @@ export default function HeroSection() {
           transition={{ duration: 1.5, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 flex flex-wrap justify-center gap-4"
         >
-          <a href="/resume.pdf" download="Venkata_Naga_Sai_Resume.pdf" className="flex items-center gap-2 px-6 py-3 bg-[#D4AF37]/10 border border-[#D4AF37]/50 rounded-full hover:bg-[#D4AF37]/20 transition-all text-[#D4AF37] font-sans text-xs uppercase tracking-widest">
-            <FileDown size={16} /> Download Resume
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-[#D4AF37]/10 border border-[#D4AF37]/50 rounded-full hover:bg-[#D4AF37]/20 transition-all text-[#D4AF37] font-sans text-xs uppercase tracking-widest">
+            <FileDown size={16} /> View Resume
           </a>
           <a href="https://github.com/venkatanagasai01" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-white/[0.05] border border-white/10 rounded-full hover:bg-white/[0.1] hover:border-white/30 transition-all text-white font-sans text-xs uppercase tracking-widest">
             <Code size={16} /> View GitHub
