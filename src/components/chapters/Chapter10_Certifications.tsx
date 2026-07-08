@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, ExternalLink, Award, Calendar, CheckCircle2 } from "lucide-react";
+import { Shield, Award, Calendar, CheckCircle2 } from "lucide-react";
 
 const CERTIFICATIONS = [
   { id: "C01", name: "Data Structures & Algorithms Mastery", issuer: "Smart Interviews", year: "2025", skillsLearned: "Data Structures, Algorithms, Time Complexity Optimization", url: "#" },
@@ -68,11 +68,8 @@ export default function Chapter10Certifications() {
                   <span className="text-white font-sans text-sm">{cert.skillsLearned}</span>
                 </div>
 
-                <div className="pt-6 border-t border-white/5 flex justify-between items-center">
+                <div className="pt-6 border-t border-white/5">
                   <span className="text-white/60 font-mono text-[10px] tracking-widest">ID: {cert.id}</span>
-                  <a href={cert.url} className="flex items-center gap-2 text-white/90 hover:text-[#D4AF37] text-xs uppercase tracking-widest font-mono transition-colors">
-                    View Credential <ExternalLink size={14} />
-                  </a>
                 </div>
 
               </div>
