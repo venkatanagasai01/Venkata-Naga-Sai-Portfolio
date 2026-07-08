@@ -13,7 +13,7 @@ export default function Chapter4Keynotes() {
       <div className="w-full max-w-[1400px] mx-auto flex flex-col gap-16">
         
         {/* Full Width Abstract Header */}
-        <div className="w-full flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-8 gap-8">
+        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-8 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export default function Chapter4Keynotes() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-right flex flex-col gap-2 border-l border-[#D4AF37]/30 pl-6"
+            className="text-left md:text-right flex flex-col gap-2 border-l border-[#D4AF37]/30 pl-4 md:pl-6"
           >
             <span className="text-white/40 text-[10px] uppercase tracking-[0.3em]">System</span>
             <span className="text-[#D4AF37] text-sm uppercase tracking-widest">Active Nodes: {projects.length}</span>

@@ -49,7 +49,7 @@ export default function Chapter5Crucible() {
         <div className="relative w-full max-w-4xl mx-auto">
           
           {/* Central Line */}
-          <div className="absolute top-0 bottom-0 left-[28px] md:left-1/2 md:-translate-x-1/2 w-[2px] bg-white/5">
+          <div className="absolute top-0 bottom-0 left-6 md:left-1/2 -translate-x-1/2 w-[2px] bg-white/5">
             <motion.div 
               style={{ height: lineHeight }} 
               className="w-full bg-[#D4AF37] origin-top shadow-[0_0_15px_rgba(212,175,55,0.5)]" 
@@ -69,7 +69,7 @@ export default function Chapter5Crucible() {
                   className={`relative flex items-center ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-8 md:gap-16`}
                 >
                   {/* Timeline Node */}
-                  <div className="absolute left-[16px] md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#050505] border-2 border-[#D4AF37] flex items-center justify-center z-10 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#050505] border-2 border-[#D4AF37] flex items-center justify-center z-10 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
                     <CircleDot size={12} className="text-[#D4AF37]" />
                   </div>
 

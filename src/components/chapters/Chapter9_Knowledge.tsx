@@ -26,14 +26,14 @@ export default function Chapter9Knowledge() {
       <div className="w-full max-w-[1400px] mx-auto flex flex-col gap-16 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-8 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-8 gap-8">
           <div className="flex flex-col gap-4">
             <span className="text-[#D4AF37] font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] flex items-center gap-2">
               <span className="w-2 h-2 bg-[#D4AF37] rounded-sm" /> Knowledge Foundation
             </span>
             <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">Classified Index</h2>
           </div>
-          <div className="text-right flex flex-col gap-2 pl-6">
+          <div className="text-left md:text-right flex flex-col gap-2 pl-4 md:pl-6 md:border-l-0 border-l border-[#D4AF37]/30">
             <span className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-mono">Clearance</span>
             <span className="text-red-500 text-sm uppercase tracking-widest font-sans flex items-center gap-2">
               Level 4 Granted
