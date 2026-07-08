@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import ScrambleText from "@/components/ui/ScrambleText";
 
 const EDUCATION = {
   degree: "Bachelor of Engineering in Artificial Intelligence & Data Science",
@@ -52,11 +51,11 @@ export default function Chapter9Knowledge() {
             <div className="flex flex-col md:flex-row gap-16 border-b border-white/5 pb-8">
               <div className="flex flex-col gap-2 w-full md:w-1/2">
                 <span className="text-white/70 font-mono text-[10px] uppercase tracking-[0.2em]">Designation</span>
-                <h3 className="text-2xl md:text-3xl font-serif text-white"><ScrambleText text={EDUCATION.degree} /></h3>
+                <h3 className="text-2xl md:text-3xl font-serif text-white">{EDUCATION.degree}</h3>
               </div>
               <div className="flex flex-col gap-2">
                 <span className="text-white/70 font-mono text-[10px] uppercase tracking-[0.2em]">Facility</span>
-                <span className="text-white text-lg font-sans"><ScrambleText text={EDUCATION.university} /></span>
+                <span className="text-white text-lg font-sans">{EDUCATION.university}</span>
                 <div className="flex items-center gap-4 mt-1">
                   <span className="text-[#D4AF37] font-mono text-xs">{EDUCATION.year}</span>
                   <span className="text-white/60">|</span>

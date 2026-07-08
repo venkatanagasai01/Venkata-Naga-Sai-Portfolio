@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { Float, Sphere, MeshDistortMaterial, Points, PointMaterial } from "@react-three/drei";
+import { Float, Sphere, MeshDistortMaterial, Points, PointMaterial, OrbitControls } from "@react-three/drei";
 
 export default function AICore({ particleCount = 2000 }) {
   const coreRef = useRef<THREE.Mesh>(null);
@@ -63,15 +63,19 @@ export default function AICore({ particleCount = 2000 }) {
       const scale = 1 + Math.sin(time * 0.5) * 0.05;
       particlesRef.current.scale.set(scale, scale, scale);
     }
-    
-    // Subtle overall camera drift
-    state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, state.pointer.x * 0.5, 0.05);
-    state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, state.pointer.y * 0.5, 0.05);
-    state.camera.lookAt(0, 0, 0);
   });
 
   return (
-    <group>
+    <>
+      <OrbitControls 
+        enableZoom={false} 
+        enablePan={false} 
+        rotateSpeed={0.5}
+        autoRotate={true}
+        autoRotateSpeed={0.5}
+        makeDefault
+      />
+      <group>
       {/* Dynamic Lighting */}
       <ambientLight intensity={0.2} />
       <directionalLight position={[10, 10, 10]} intensity={1.5} color="#D4AF37" />
@@ -128,5 +132,6 @@ export default function AICore({ particleCount = 2000 }) {
         />
       </Points>
     </group>
+    </>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useRef, useState, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Html, Line, Sphere } from "@react-three/drei";
+import { Html, Line, Sphere, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
 type NodeData = {
@@ -45,18 +45,23 @@ export default function NeuralConstellation() {
 
   useFrame((state) => {
     if (groupRef.current && !activeNode) {
-      // Base gentle rotation combined with cursor influence
+      // Gentle floating effect
       const time = state.clock.elapsedTime;
-      const targetX = Math.sin(time * 0.2) * 0.1 - (state.pointer.y * Math.PI) / 10;
-      const targetY = time * 0.05 + (state.pointer.x * Math.PI) / 10;
-      
-      groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, targetX, 0.05);
-      groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, targetY, 0.05);
+      groupRef.current.position.y = Math.sin(time * 0.5) * 0.1;
     }
   });
 
   return (
-    <group ref={groupRef}>
+    <>
+      <OrbitControls 
+        enableZoom={false} 
+        enablePan={false} 
+        rotateSpeed={0.5}
+        autoRotate={!activeNode}
+        autoRotateSpeed={0.8}
+        makeDefault
+      />
+      <group ref={groupRef}>
       {/* Draw connections */}
       {lines.map((line, idx) => {
         const isConnectedToHovered = hoveredNode === line.id1 || hoveredNode === line.id2;
@@ -117,8 +122,8 @@ export default function NeuralConstellation() {
             {/* Holographic Label (Always visible but small) */}
             {!isActive && (
               <Html distanceFactor={10} center zIndexRange={[100, 0]}>
-                <div className={`transition-all duration-300 ${isHovered ? 'opacity-100 scale-110' : 'opacity-40 scale-100'}`}>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white bg-black/50 px-2 py-1 border border-white/10 backdrop-blur-sm whitespace-nowrap">
+                <div className={`transition-all duration-300 ${isHovered ? 'opacity-100 scale-110' : 'opacity-60 scale-100'}`}>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white drop-shadow-[0_2px_4px_rgba(0,0,0,1)] whitespace-nowrap font-bold">
                     {node.category}
                   </span>
                 </div>
@@ -166,6 +171,7 @@ export default function NeuralConstellation() {
           </group>
         );
       })}
-    </group>
+      </group>
+    </>
   );
 }
