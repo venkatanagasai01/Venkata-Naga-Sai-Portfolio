@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import AICore from "@/components/canvas/AICore";
-import { FileDown, Code, User, Mail } from "lucide-react";
+import { FileDown, Code, User, Mail, Code2 } from "lucide-react";
 import MagneticButton from "@/components/ui/MagneticButton";
 
 // Advanced text assembly animation
@@ -17,14 +17,14 @@ const AssembleText = ({ text, delay = 0 }: { text: string; delay?: number }) => 
         whileInView={{ left: "200%" }}
         viewport={{ once: false }}
         transition={{ delay: delay + 1, duration: 2, ease: "easeInOut" }}
-        className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[30deg] mix-blend-overlay z-20 pointer-events-none"
+        className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent skew-x-[30deg] mix-blend-multiply z-20 pointer-events-none"
       />
       
       {text.split("").map((char, index) => (
         <motion.span
           key={index}
-          initial={{ opacity: 0, filter: "blur(20px)", y: 50, scale: 2 }}
-          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0, scale: 1 }}
+          initial={{ opacity: 0, filter: "blur(20px)", x: -50, scale: 1.5 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", x: 0, scale: 1 }}
           viewport={{ once: false }}
           transition={{
             duration: 1.5,
@@ -114,6 +114,11 @@ export default function HeroSection() {
           <MagneticButton href="https://github.com/venkatanagasai01" target="_blank">
             <div className="flex items-center gap-2 px-6 py-3 bg-white/[0.05] border border-white/10 rounded-full hover:bg-white/[0.1] hover:border-white/30 transition-all text-white font-sans text-xs uppercase tracking-widest">
               <Code size={16} /> View GitHub
+            </div>
+          </MagneticButton>
+          <MagneticButton href="https://leetcode.com/u/_venkata_naga_sai_/" target="_blank">
+            <div className="flex items-center gap-2 px-6 py-3 bg-white/[0.05] border border-white/10 rounded-full hover:bg-white/[0.1] hover:border-white/30 transition-all text-white font-sans text-xs uppercase tracking-widest">
+              <Code2 size={16} /> View LeetCode
             </div>
           </MagneticButton>
           <MagneticButton href="https://www.linkedin.com/in/venkata-naga-sai-adapala-91a8732a6/" target="_blank">
