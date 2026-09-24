@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
-import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import BackgroundSystem from "@/components/layout/BackgroundSystem";
 import OSBootSequence from "@/components/layout/OSBootSequence";
@@ -46,13 +45,12 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${playfair.variable} antialiased`}
     >
-      <body className="flex flex-col bg-[#030303] text-[#FAFAFA] selection:bg-accent/30 selection:text-white md:cursor-none min-h-screen">
+      <body className="flex flex-col bg-[#030303] text-[#FAFAFA] selection:bg-accent/30 selection:text-white min-h-screen">
         <OSBootSequence />
         <BackgroundSystem />
         
         <div className="relative z-10 flex flex-col w-full min-h-screen">
           <SmoothScroll>
-            <CustomCursor />
             {children}
             <ScrollToTop />
           </SmoothScroll>

@@ -1,54 +1,45 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { projectsData, ProjectData } from "@/data/projects";
-import { useRef } from "react";
 import Image from "next/image";
 
+// Performance: Removed per-card useScroll + useTransform parallax.
+// Each card was creating its own scroll listener and running useTransform
+// on every scroll frame. CSS transform is used for the hover effect instead.
 const ProjectCard = ({ project, index }: { project: ProjectData; index: number }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
-
   return (
     <motion.div 
-      ref={ref}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
+      transition={{ duration: 0.6, delay: index * 0.08 }}
     >
       <Link href={`/projects/${project.id}`} className="block group">
         <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-12 bg-[#0A0A0A] border border-white/10 rounded-3xl overflow-hidden hover:border-accent/50 transition-all duration-500 relative min-h-[300px]">
           
-          {/* Parallax Background Image */}
+          {/* Background Image — simple CSS transition instead of per-frame parallax */}
           <div className="absolute inset-0 z-0 overflow-hidden opacity-30 group-hover:opacity-60 transition-opacity duration-700">
-            <motion.div style={{ y }} className="w-full h-[140%] absolute top-[-20%] left-0 mix-blend-overlay grayscale group-hover:grayscale-0 transition-all duration-700">
+            <div className="w-full h-full absolute inset-0 mix-blend-overlay grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105">
               <Image 
                 src={project.heroImage}
                 alt={project.title}
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1400px"
               />
-            </motion.div>
+            </div>
           </div>
 
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent z-[1]" />
 
           <div className="flex flex-col gap-4 relative z-10 w-full md:w-1/2">
             <span className="text-white/70 font-mono text-[10px] uppercase tracking-[0.3em]">Node {String(index + 1).padStart(2, '0')}</span>
-            <motion.h3 
-              layoutId={`project-title-${project.id}`}
-              className="text-3xl md:text-5xl font-serif text-white group-hover:text-accent transition-colors"
-            >
+            <h3 className="text-3xl md:text-5xl font-serif text-white group-hover:text-accent transition-colors">
               {project.title}
-            </motion.h3>
+            </h3>
             <p className="text-white/80 font-sans font-light mt-2 line-clamp-2">
               {project.overview}
             </p>
@@ -57,7 +48,7 @@ const ProjectCard = ({ project, index }: { project: ProjectData; index: number }
           <div className="flex flex-col items-end gap-6 relative z-10 mt-8 md:mt-0 w-full md:w-auto">
             <div className="flex gap-4 flex-wrap justify-end">
               {project.technologies.slice(0, 3).map((tech, i) => (
-                <span key={i} className="px-3 py-1 bg-black/50 backdrop-blur-md border border-white/10 rounded-full text-[10px] uppercase tracking-widest text-white">
+                <span key={i} className="px-3 py-1 bg-black/50 border border-white/10 rounded-full text-[10px] uppercase tracking-widest text-white">
                   {tech}
                 </span>
               ))}
@@ -65,7 +56,7 @@ const ProjectCard = ({ project, index }: { project: ProjectData; index: number }
             
             <div className="flex items-center gap-4 text-white/90 group-hover:text-white transition-colors">
               <span className="text-xs uppercase tracking-[0.2em] font-sans">Initialize Connect</span>
-              <div className="p-3 bg-white/5 backdrop-blur-sm rounded-full group-hover:bg-accent/20 group-hover:text-accent transition-colors">
+              <div className="p-3 bg-white/5 rounded-full group-hover:bg-accent/20 group-hover:text-accent transition-colors">
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </div>

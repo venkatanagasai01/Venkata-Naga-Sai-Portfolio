@@ -11,24 +11,15 @@ import MagneticButton from "@/components/ui/MagneticButton";
 const AssembleText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   return (
     <div className="relative inline-block overflow-hidden pb-4">
-      {/* Light Sweep Effect */}
-      <motion.div
-        initial={{ left: "-100%" }}
-        whileInView={{ left: "200%" }}
-        viewport={{ once: false }}
-        transition={{ delay: delay + 1, duration: 2, ease: "easeInOut" }}
-        className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent skew-x-[30deg] mix-blend-multiply z-20 pointer-events-none"
-      />
-      
       {text.split("").map((char, index) => (
         <motion.span
           key={index}
-          initial={{ opacity: 0, filter: "blur(20px)", x: -50, scale: 1.5 }}
-          whileInView={{ opacity: 1, filter: "blur(0px)", x: 0, scale: 1 }}
-          viewport={{ once: false }}
+          initial={{ opacity: 0, filter: "blur(12px)", x: -30 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", x: 0 }}
+          viewport={{ once: true }}
           transition={{
-            duration: 1.5,
-            delay: delay + index * 0.05,
+            duration: 1,
+            delay: delay + index * 0.04,
             ease: [0.16, 1, 0.3, 1],
           }}
           className="inline-block relative z-10"
@@ -44,10 +35,10 @@ export default function HeroSection() {
   const { scrollYProgress } = useScroll();
   const ref = useRef(null);
   
-  // Cinematic scroll descent into the AI Core
-  const scaleParallax = useTransform(scrollYProgress, [0, 0.5], [1, 5]);
-  const opacityParallax = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const blurParallax = useTransform(scrollYProgress, [0, 0.2], ["blur(0px)", "blur(20px)"]);
+  // Performance: removed blur filter from scroll transform — blur on every
+  // scroll frame causes severe composite layer thrashing. Using just opacity
+  // and scale, which are GPU-composited properties.
+  const opacityParallax = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
   return (
     <motion.section 
@@ -55,27 +46,25 @@ export default function HeroSection() {
       id="about"
     >
       {/* 3D Core Layer */}
-      <motion.div 
+      <div 
         ref={ref}
         className="absolute inset-0 z-0 pointer-events-none"
-        style={{ scale: scaleParallax }}
       >
         <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 1.5]} gl={{ alpha: true, antialias: false }}>
           <AICore />
         </Canvas>
-      </motion.div>
+      </div>
 
-      {/* Layered Background Enhancements (Noise, Grid) */}
-      <div className="absolute inset-0 z-[1] bg-[url('/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
+      {/* Layered Background Enhancements (Grid only — noise.png removed, it 404s) */}
       <div className="absolute inset-0 z-[1] bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
       {/* Content Layer */}
       <motion.div 
-        style={{ opacity: opacityParallax, filter: blurParallax }}
+        style={{ opacity: opacityParallax }}
         className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center text-center mt-24"
       >
         
-        {/* Assemble Text Reveal */}
+        {/* Assemble Text Reveal — once:true so it doesn't re-animate */}
         <h1 className="text-[14vw] md:text-[clamp(3rem,7.5vw,10rem)] font-serif font-light tracking-tighter text-white leading-[0.9] select-none flex flex-wrap md:flex-nowrap md:whitespace-nowrap justify-center gap-x-4 md:gap-x-8 drop-shadow-[0_0_40px_rgba(255,255,255,0.1)]">
           <AssembleText text="Venkata" delay={1.0} />
           <AssembleText text="Naga" delay={1.2} />
@@ -86,8 +75,8 @@ export default function HeroSection() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 1.5, delay: 2.0, ease: "easeOut" }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 2.0, ease: "easeOut" }}
           className="mt-6 flex flex-col items-center gap-4 text-center"
         >
           <h2 className="text-accent font-mono text-sm md:text-base uppercase tracking-[0.3em]">
@@ -102,8 +91,8 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 1.5, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 flex flex-wrap justify-center gap-4"
         >
           <MagneticButton href="/resume.pdf" target="_blank" rel="noopener noreferrer">
@@ -137,7 +126,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 2, delay: 3.0 }}
           className="mt-16 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-white/70 font-mono text-[10px] md:text-xs uppercase tracking-widest"
         >
@@ -157,7 +146,7 @@ export default function HeroSection() {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
+        viewport={{ once: true }}
         transition={{ delay: 4.0, duration: 2 }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 text-white/60"
       >
