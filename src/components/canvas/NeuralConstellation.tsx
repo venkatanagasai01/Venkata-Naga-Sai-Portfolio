@@ -129,7 +129,7 @@ export default function NeuralConstellation() {
               color={isHovered ? "#D4AF37" : "#ffffff"}
               anchorX="center"
               anchorY="middle"
-              opacity={isHovered ? 1 : 0.6}
+              fillOpacity={isHovered ? 1 : 0.6}
             >
               {node.category}
             </Text>
@@ -141,7 +141,7 @@ export default function NeuralConstellation() {
                 color="#ffffff"
                 anchorX="center"
                 anchorY="middle"
-                opacity={0.8}
+                fillOpacity={0.8}
               >
                 {node.techs.join(" • ")}
               </Text>

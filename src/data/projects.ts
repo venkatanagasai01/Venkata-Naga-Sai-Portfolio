@@ -1,4 +1,4 @@
-export type ProjectID = "smart-style" | "quantvision-ai" | "portfolio";
+export type ProjectID = "smart-style" | "quantvision-ai" | "portfolio" | "agent-mesh";
 
 export interface ProjectData {
   id: ProjectID;
@@ -126,6 +126,42 @@ export const projectsData: Record<ProjectID, ProjectData> = {
     screenshots: [],
     heroImage: "/images/workspace.png",
     githubUrl: "https://github.com/venkatanagasai01",
+    liveDemoUrl: "#"
+  },
+  "agent-mesh": {
+    id: "agent-mesh",
+    title: "AgentMesh",
+    tagline: "Enterprise AI Security Gateway",
+    overview: "AgentMesh is an enterprise-grade AI gateway built in Rust that acts as a security middleware between autonomous AI agents and enterprise infrastructure. It is a real-time security gateway that intercepts every action an AI agent tries to perform, checks if it's safe, blocks dangerous operations, tracks costs, and provides a time-travel rollback capability — all before the action hits the production database.",
+    problemStatement: "Today, companies are deploying AI agents that can autonomously write and execute SQL queries, make API calls, and modify production systems. But these agents can hallucinate — they might execute DROP TABLE users thinking it's the right thing to do. There is no standard middleware to protect enterprise systems from rogue AI agents. Existing WAFs fail because they don't understand SQL intent, and traditional RBAC is too coarse.",
+    solution: "AgentMesh acts as a Cognitive Firewall. It blocks traffic based on semantic intent rather than just IP/ports. By parsing SQL into an Abstract Syntax Tree (AST) and applying an optional LLM layer for deep analysis, it guarantees dangerous structural operations (like DROP or unauthorized UPDATEs) are blocked deterministically. A declarative YAML policy engine enforces rules, and a PostgreSQL WAL-based CDC implementation enables seamless point-in-time rollbacks.",
+    features: [
+      "Cognitive Firewall: Two-layer intent analysis (AST Parsing + LLM Semantic Analysis) to block destructive queries deterministically.",
+      "Time-Travel Rollback: Uses PostgreSQL WAL logical replication to capture CDC data (before/after states), allowing instant rollbacks of rogue agent actions.",
+      "Declarative Policy Engine: Code-free YAML-based security rules (e.g., 'intern bots read-only', 'budget caps').",
+      "Cost Shield: Temporal windowing in PostgreSQL for per-agent rate limiting and daily spend budgets.",
+      "Cryptographic Identity: Secure API key hashing (SHA-256) with indexable prefixes for ultra-fast authentication."
+    ],
+    systemArchitecture: "The core gateway is written in Rust using Tokio for asynchronous, zero-cost high throughput. The HTTP layer uses Axum and Tower for composable middleware. Data persistence and CDC rely on PostgreSQL with logical replication enabled. The control plane dashboard is built with React and Next.js, polling the /api/v1/audit-log for real-time visualization of agent mutations.",
+    architectureDiagramDesc: "[ AI Agent ] --> [ Rust Axum Gateway ] --> [ Cognitive Firewall (AST + LLM) ] --> [ PostgreSQL CDC ] --> [ Next.js Dashboard ]",
+    aiPipeline: "The Cognitive Firewall evaluates queries in two stages. Layer 1 uses the 'sqlparser' Rust crate to convert the query into an Abstract Syntax Tree (AST). If destructive operations (DROP, DELETE) are found, the request is immediately blocked. Layer 2 conditionally sends structurally safe queries to an LLM (GPT-4o-mini, Groq) to catch semantic logic attacks, gracefully falling back to AST on timeout.",
+    deployment: "The Rust binary is compiled for high-performance execution on a minimum of 2 cores, alongside a PostgreSQL instance with 'wal_level=logical'. It exposes 9 REST endpoints for tool calling, agent registration, audit logging, and rollbacks.",
+    technologies: ["Rust", "Tokio", "Axum", "Tower", "PostgreSQL", "React", "Next.js", "SQLParser", "LLM APIs"],
+    challenges: [
+      "Deterministic Safety: Building an AST parser that definitively blocks destructive SQL without false positives (e.g., blocking 'SELECT * FROM drop_logs').",
+      "Real-Time Rollbacks: Implementing binary pgoutput decoding from the PostgreSQL replication slot asynchronously without blocking the main Tokio runtime."
+    ],
+    lessonsLearned: [
+      "Deepened expertise in Rust's zero-cost abstractions, memory safety without GC pauses, and the Tokio async ecosystem.",
+      "Mastered PostgreSQL's Write-Ahead Log (WAL) and logical decoding for real-time Change Data Capture (CDC)."
+    ],
+    futureImprovements: [
+      "Integrating WebSockets for the Next.js dashboard to push CDC events directly instead of polling.",
+      "Adding a local SLM (Small Language Model) via ONNX for zero-latency, offline semantic analysis."
+    ],
+    screenshots: [],
+    heroImage: "/images/agentmesh.jpg",
+    githubUrl: "#",
     liveDemoUrl: "#"
   }
 };
