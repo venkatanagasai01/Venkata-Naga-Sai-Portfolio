@@ -75,7 +75,6 @@ export default function EngineeringPhilosophy() {
   const [particles, setParticles] = useState<Array<{left: string, top: string, animationDuration: string, animationDelay: string}>>([]);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setParticles(
       [...Array(20)].map(() => ({
         left: `${Math.random() * 100}%`,
